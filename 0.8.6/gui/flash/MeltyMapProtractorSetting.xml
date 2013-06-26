@@ -3,8 +3,8 @@
     <enableEffArmor>true</enableEffArmor>    <!-- Displays effective armor calculation. ** only when armor values are present in "vehiclesData" section. -->
     <enableRulerWhenTD>true</enableRulerWhenTD>    <!-- Displays GunArc Critical Angle Ruler for TD's. -->
     <enableRulerWhenSPG>true</enableRulerWhenSPG>    <!-- Displays GunArc Critical Angle Ruler for SPG's. -->
-    <minimapEx>true</minimapEx>    <!-- Enables MiniMap Enhancement. -->
-    <damagePanelEx>false</damagePanelEx>  <!-- Enables Damage Panel Enhancement. (Displays time to repair). -->
+    <minimapEx>false</minimapEx>    <!-- Enables MiniMap Enhancement. -->
+    <damagePanelEx>true</damagePanelEx>  <!-- Enables Damage Panel Enhancement. (Displays time to repair). -->
     <bigMapKey>17</bigMapKey>    <!-- Key to zoom MiniMap, default 20(CapsLock), can be changed to 17(Ctrl). -->
     <bigMapSize>600</bigMapSize>   <!-- Size of MiniMap zoom in pixels. -->
     <ordinateWhenTank>0.90</ordinateWhenTank>    <!-- Vertical placement of Effective armor calculation ( In percentage of lower half vertical screen resolution ). -->
