@@ -1832,7 +1832,7 @@
     "lines": 20,
     "x": 235,
     "insertOrder": "end",
-    "y": -230,
+    "y": -180,
     "groupHitsByPlayer": true,
     "visible": true,
     "shadow": {
