@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<zoomX4.xml>
+
+    <!--
+    "True" - To enable 4x stage zoom in sniper mode
+
+    "False" - To disable 4x stage zoom in sniper mode (equivalent of default without mod)
+    -->
+
+    <zoomX4>True</zoomX4>
+
+
+    <!--
+	Define each stage of zoom level.
+	Works only if <zoomX4>True</zoomX4> is set to "True"
+    -->
+
+    <zooms>2 4 8 16</zooms>
+    <zoomExposure>0.5 0.4 0.3 0.2</zoomExposure>
+
+</zoomX4.xml>
