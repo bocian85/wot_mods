@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<zoomX.xml>
+
+    <!--
+    "True" - To enable multi-stage zoom mod.
+    "False" - To disable multi-stage zoom mod. (Equivalent of default)
+    -->
+
+    <zoomX>True</zoomX>
+
+
+    <!--
+    Configure each stage of zoom level in sniper view.
+    Up to 10 stages can be configured.
+    Separate each stage with "SPACE" key.
+    Working only if "zoomX" is set to "True"
+    -->
+
+    <zooms>2 4 8 16</zooms>
+
+</zoomX.xml>

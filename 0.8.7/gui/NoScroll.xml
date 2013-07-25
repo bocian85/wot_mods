@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<noscroll.xml>
+
+    <!--
+    "True" - To disable sniper mode enter with mouse scroll
+
+    "False" - To enable sniper mode enter with mouse scroll (equivalent of default, without mod)
+    -->
+
+    <noscroll>true</noscroll>
+
+    <!--
+    "True" - Min zoom level will be set upon enter of sniper mode (equivalent of default, without mod)
+
+    "False" - Last time used zoom level will be set upon enter of sniper mode
+    -->
+
+    <defzoom>true</defzoom>
+
+</noscroll.xml>

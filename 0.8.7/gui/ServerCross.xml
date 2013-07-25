@@ -1,0 +1,89 @@
+<servercross.xml>
+  <arcadeMode>
+    <gunMarker>
+      <texture>gui/maps/ingame/aim/gun_marker_blue.dds</texture>
+      <size>64 64</size>
+      <elems>
+        <top>
+          <mapping>13 0 26 13</mapping>
+          <size>13 13</size>
+        </top>
+        <right>
+          <mapping>26 0 39 13</mapping>
+          <size>13 13</size>
+        </right>
+        <bottom>
+          <mapping>39 0 52 13</mapping>
+          <size>13 13</size>
+        </bottom>
+        <left>
+          <mapping>0 0 13 13</mapping>
+          <size>13 13</size>
+        </left>
+        <center>
+          <mapping>0 13 21 34</mapping>
+          <size>21 21</size>
+        </center>
+      </elems>
+    </gunMarker>
+   </arcadeMode>
+  <strategicMode>
+    <gunMarker>
+      <texture>gui/maps/ingame/aim/gun_marker_blue.dds</texture>
+      <size>64 64</size>
+      <elems>
+        <top>
+          <mapping>13 0 26 13</mapping>
+          <size>13 13</size>
+        </top>
+        <right>
+          <mapping>26 0 39 13</mapping>
+          <size>13 13</size>
+        </right>
+        <bottom>
+          <mapping>39 0 52 13</mapping>
+          <size>13 13</size>
+        </bottom>
+        <left>
+          <mapping>0 0 13 13</mapping>
+          <size>13 13</size>
+        </left>
+        <center>
+          <mapping>0 13 21 34</mapping>
+          <size>21 21</size>
+        </center>
+      </elems>
+    </gunMarker>
+  </strategicMode>
+  <sniperMode>
+    <gunMarker>
+      <texture>gui/maps/ingame/aim/gun_marker_blue.dds</texture>
+      <size>64 64</size>
+      <elems>
+        <top>
+          <mapping>13 0 26 13</mapping>
+          <size>13 13</size>
+        </top>
+        <right>
+          <mapping>26 0 39 13</mapping>
+          <size>13 13</size>
+        </right>
+        <bottom>
+          <mapping>39 0 52 13</mapping>
+          <size>13 13</size>
+        </bottom>
+        <left>
+          <mapping>0 0 13 13</mapping>
+          <size>13 13</size>
+        </left>
+        <center>
+          <mapping>0 13 21 34</mapping>
+          <size>21 21</size>
+        </center>
+      </elems>
+    </gunMarker>
+    <nobinoculars>true</nobinoculars>  <!-- Disables Scope Shadow. "True" - scopes shadow disabled, "False" - scope shadow visible --> 
+	<resizeViewport>true</resizeViewport>
+    <viewportSize>1.0 1.0</viewportSize>
+  </sniperMode>
+</servercross.xml>
