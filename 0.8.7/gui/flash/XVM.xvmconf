@@ -1,0 +1,2814 @@
+﻿{
+  "minimap": {
+    "mapBackgroundImageAlpha": 100,
+    "iconScale": 0.5,
+    "selfIconAlpha": 100,
+    "enabled": true,
+    "cameraAlpha": 100,
+    "labels": {
+      "vehicleclassmacro": {
+        "td": "▼",
+        "light": "",
+        "medium": "",
+        "spg": "■",
+        "superh": "",
+        "heavy": ""
+      },
+      "units": {
+        "revealedEnabled": true,
+        "lostEnemyEnabled": true,
+        "format": {
+          "lost": "<span class='mm_dot'>•</span><span class='mm_l'><i>{{vehicle-type}}</i></span>",
+          "enemy": "<span class='mm_e'>{{vehicle-type}}</span>",
+          "squad": "<textformat leading='-1'><span class='mm_s'><i>{{short-nick}}</i>\n{{vehicle-type}}</span><textformat>",
+          "ally": "<span class='mm_a'>{{vehicle-type}}</span>",
+          "oneself": ""
+        },
+        "shadow": {
+          "lost": {
+            "angle": 0,
+            "strength": 3,
+            "alpha": 80,
+            "enabled": true,
+            "distance": 0,
+            "blur": 3,
+            "color": "0x000000"
+          },
+          "enemy": {
+            "angle": 0,
+            "strength": 3,
+            "alpha": 80,
+            "enabled": true,
+            "distance": 0,
+            "blur": 3,
+            "color": "0x000000"
+          },
+          "squad": {
+            "angle": 0,
+            "strength": 3,
+            "alpha": 80,
+            "enabled": true,
+            "distance": 0,
+            "blur": 3,
+            "color": "0x000000"
+          },
+          "ally": {
+            "angle": 0,
+            "strength": 3,
+            "alpha": 80,
+            "enabled": true,
+            "distance": 0,
+            "blur": 3,
+            "color": "0x000000"
+          },
+          "oneself": {
+            "angle": 0,
+            "strength": 3,
+            "alpha": 80,
+            "enabled": true,
+            "distance": 0,
+            "blur": 3,
+            "color": "0x000000"
+          }
+        },
+        "css": {
+          "lost": ".mm_l{font-family:$FieldFont; font-size:8px; color:#FCA9A4;} .mm_dot{font-family:Arial; font-size:17px; color:#FCA9A4;}",
+          "enemy": ".mm_e{font-family:$FieldFont; font-size:8px; color:#FCA9A4;}",
+          "squad": ".mm_s{font-family:$FieldFont; font-size:8px; color:#FFC099;}",
+          "ally": ".mm_a{font-family:$FieldFont; font-size:8px; color:#C8FFA6;}",
+          "oneself": ".mm_o{font-family:$FieldFont; font-size:8px; color:#FFFFFF;}"
+        },
+        "offset": {
+          "lost": {
+            "y": -10,
+            "x": -6
+          },
+          "enemy": {
+            "y": -1,
+            "x": 3
+          },
+          "squad": {
+            "y": -2,
+            "x": 3
+          },
+          "ally": {
+            "y": -1,
+            "x": 3
+          },
+          "oneself": {
+            "y": 0,
+            "x": 0
+          }
+        },
+        "alpha": {
+          "lost": 70,
+          "enemy": 100,
+          "squad": 100,
+          "ally": 100,
+          "oneself": 100
+        }
+      },
+      "nickShrink": 5,
+      "mapSize": {
+        "format": "<b>{{cellsize}}0 m</b>",
+        "offsetY": 0,
+        "css": "font-size:10px; color:#FFCC66;",
+        "shadow": {
+          "angle": 0,
+          "strength": 3,
+          "alpha": 80,
+          "enabled": true,
+          "distance": 0,
+          "blur": 2,
+          "color": "0x000000"
+        },
+        "width": 100,
+        "height": 30,
+        "enabled": true,
+        "alpha": 80,
+        "offsetX": 0
+      }
+    },
+    "circles": { // Distance circles. Only real map meters. Only for owned unit.
+        // Works only with xvm-stat.exe
+        "enabled": true,
+        "major": [
+            // 445 meters - maximum reveal distance.
+            { "enabled": true, "distance": 445, "thickness": 0.75, "alpha": 35, "color": "0x000000" },
+            { "enabled": true, "distance": 50, "thickness": 0.5, "alpha": 30, "color": "0x660000" }
+        ],
+        // Special circles dependent on vehicle type.
+        // Many configuration lines for the same vehicle make many circles.
+        // Only artillery top gun range by default.
+        //   See other vehicle types at:
+        // http://code.google.com/p/wot-xvm/source/browse/trunk/src/xvm/src/wot/utils/VehicleInfoData2.as
+        //   Artillery gun fire range may differ depending on vehicle angle relative to ground
+        // and vehicle height positioning relative to target.
+        // See pics at http://goo.gl/ZqlPa
+        "special": [
+            { "su_18":            { "enabled": true, "distance": 552,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "su_26":            { "enabled": true, "distance": 578,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "su_5":             { "enabled": true, "distance": 605,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "su_8":             { "enabled": true, "distance": 920,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "s_51":             { "enabled": true, "distance": 1229, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "su_14":            { "enabled": true, "distance": 1229, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "object_212":       { "enabled": true, "distance": 1229, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "object_261":       { "enabled": true, "distance": 1463, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+
+            { "bison_i":          { "enabled": true, "distance": 605,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "sturmpanzer_ii":   { "enabled": true, "distance": 605,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "wespe":            { "enabled": true, "distance": 1000, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "grille":           { "enabled": true, "distance": 1210, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "hummel":           { "enabled": true, "distance": 1264, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "g_panther":        { "enabled": true, "distance": 1407, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "g_tiger":          { "enabled": true, "distance": 1172, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "g_e":              { "enabled": true, "distance": 1172, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+
+            { "t57":              { "enabled": true, "distance": 552,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "m37":              { "enabled": true, "distance": 969,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "m7_priest":        { "enabled": true, "distance": 1047, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "m41":              { "enabled": true, "distance": 1210, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "m12":              { "enabled": true, "distance": 1316, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "m40m43":           { "enabled": true, "distance": 1179, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "t92":              { "enabled": true, "distance": 1248, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+
+            { "renaultbs":        { "enabled": true, "distance": 450,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "lorraine39_l_am":  { "enabled": true, "distance": 844,  "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "amx_105am":        { "enabled": true, "distance": 1000, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "_105_lefh18b2":    { "enabled": true, "distance": 1000, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "amx_13f3am":       { "enabled": true, "distance": 1250, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "lorraine155_50":   { "enabled": true, "distance": 1202, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "lorraine155_51":   { "enabled": true, "distance": 1296, "thickness": 1, "alpha": 60, "color": "0xEE4444" } },
+            { "bat_chatillon155": { "enabled": true, "distance": 1296, "thickness": 1, "alpha": 60, "color": "0xEE4444" } }
+        ]
+    },
+    "lines": { // Only for owned vehicle.
+       // Works only with xvm-stat.exe
+       "enabled": true,
+       // "inmeters": true  - make line size to be in real map meters.
+       // "inmeters": false - make line size to be in minimap interface clip points. Minimap interface clip side is 210 points.
+       // Distance between farthest corners at 1km map is somewhat more than 1400 meters.
+       // Sections can contain any number of lines.
+       // To set a point try setting line with length of one and large thickness.
+
+       // You can leave one line for simplicity. Remember comma positioning rules.
+       "vehicle": [ // Own vehicle direction.
+         { "enabled": false, "from": 50,  "to": 95,  "inmeters": true, "thickness": 1.5, "alpha": 45, "color": "0x60FF00"},
+         { "enabled": false, "from": 100, "to": 145, "inmeters": true, "thickness": 1.4, "alpha": 40, "color": "0x60FF00"},
+         { "enabled": false, "from": 150, "to": 196, "inmeters": true, "thickness": 1.3, "alpha": 35, "color": "0x60FF00"},
+         { "enabled": false, "from": 200, "to": 246, "inmeters": true, "thickness": 1.2, "alpha": 33, "color": "0x60FF00"},
+         { "enabled": false, "from": 250, "to": 296, "inmeters": true, "thickness": 1.1, "alpha": 30, "color": "0x60FF00"},
+         { "enabled": false, "from": 300, "to": 397, "inmeters": true, "thickness": 1,   "alpha": 30, "color": "0x60FF00"},
+         { "enabled": false, "from": 400, "to": 497, "inmeters": true, "thickness": 0.9, "alpha": 30, "color": "0x60FF00"},
+         { "enabled": false, "from": 500, "to": 2000,"inmeters": true, "thickness": 0.75, "alpha": 30, "color": "0x60FF00"}
+       ],
+       "camera": [ // Camera direction.
+         { "enabled": true, "from": 50,  "to": 80,   "inmeters": true, "thickness": 1.3,  "alpha": 45, "color": "0xFFCC66"},
+         { "enabled": true, "from": 120, "to": 180,  "inmeters": true, "thickness": 1.2,  "alpha": 40, "color": "0xFFCC66"},
+         { "enabled": true, "from": 220, "to": 280,  "inmeters": true, "thickness": 1.1,  "alpha": 35, "color": "0xFFCC66"},
+         { "enabled": true, "from": 320, "to": 380,  "inmeters": true, "thickness": 1,    "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 420, "to": 480,  "inmeters": true, "thickness": 0.9,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 520, "to": 580,  "inmeters": true, "thickness": 0.8,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 620, "to": 680,  "inmeters": true, "thickness": 0.75, "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 720, "to": 780,  "inmeters": true, "thickness": 0.75, "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 820, "to": 880,  "inmeters": true, "thickness": 0.75, "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 920, "to": 980,  "inmeters": true, "thickness": 0.75, "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1020,"to": 1080, "inmeters": true, "thickness": 0.75, "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1120,"to": 1180, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1220,"to": 1280, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1320,"to": 1380, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1420,"to": 1480, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1520,"to": 1580, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1620,"to": 1680, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1720,"to": 1780, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1820,"to": 1880, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1920,"to": 2000, "inmeters": true, "thickness": 0.75,  "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 99,  "to": 100,  "inmeters": true, "thickness": 2.2,   "alpha": 45, "color": "0xFFCC66"},
+           // Dots
+         { "enabled": true, "from": 199, "to": 200,  "inmeters": true, "thickness": 2.1,   "alpha": 40, "color": "0xFFCC66"},
+         { "enabled": true, "from": 299, "to": 300,  "inmeters": true, "thickness": 2,     "alpha": 35, "color": "0xFFCC66"},
+         { "enabled": true, "from": 399, "to": 400,  "inmeters": true, "thickness": 1.9,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 499, "to": 500,  "inmeters": true, "thickness": 1.8,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 599, "to": 600,  "inmeters": true, "thickness": 1.7,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 699, "to": 700,  "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 799, "to": 800,  "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 899, "to": 900,  "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 999, "to": 1000, "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1099,"to": 1100, "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1199,"to": 1200, "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1299,"to": 1300, "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1399,"to": 1400, "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"},
+         { "enabled": true, "from": 1499,"to": 1500, "inmeters": true, "thickness": 1.6,   "alpha": 30, "color": "0xFFCC66"}
+       ],
+       // Gun traverse angles may differ depending on vehicle angle relative to ground
+       // See pics at http://goo.gl/ZqlPa
+       "traverseAngle": [ // Horizontal gun traverse angle lines for ATs and SPGs.
+         { "enabled": true, "from": 50,  "to": 95,  "inmeters": true, "thickness": 1.5,   "alpha": 50, "color": "0xCCCCCC"},
+         { "enabled": true, "from": 100, "to": 145, "inmeters": true, "thickness": 1.4,   "alpha": 48, "color": "0xCCCCCC"},
+         { "enabled": true, "from": 150, "to": 196, "inmeters": true, "thickness": 1.3,   "alpha": 46, "color": "0xCCCCCC"},
+         { "enabled": true, "from": 200, "to": 246, "inmeters": true, "thickness": 1.2, "alpha": 44, "color": "0xCCCCCC"},
+         { "enabled": true, "from": 250, "to": 296, "inmeters": true, "thickness": 1.1, "alpha": 42, "color": "0xCCCCCC"},
+         { "enabled": true, "from": 300, "to": 397, "inmeters": true, "thickness": 1,   "alpha": 40, "color": "0xCCCCCC"},
+         { "enabled": true, "from": 400, "to": 497, "inmeters": true, "thickness": 0.9,   "alpha": 40, "color": "0xCCCCCC"},
+         { "enabled": true, "from": 500, "to": 2000,"inmeters": true, "thickness": 0.75,   "alpha": 40, "color": "0xCCCCCC"}
+       ]
+    }
+  },
+  "battle": {
+    "highlightVehicleIcon": true,
+    "useStandardMarkers": false,
+    "clockFormat": "H:N",
+    "mirroredVehicleIcons": true,
+    "clanIconsFolder": "../../../clanicons/",
+    "showPostmortemTips": false,
+    "removePanelsModeSwitcher": true,
+    "elements": {
+      "minimap": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "vehicleMessagesPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "debugPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "teamBasesPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "battleTimer": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "fragCorrelationBar": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "consumablesPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "switcher_mc": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "langBarPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "rightPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "drownTimer": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "messenger": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "vehicleErrorsPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "overturnedTimer": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "playerMessangersPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "sixthSenseIndicator": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "damagePanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "leftPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "timerBig": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "damageInfoPanel": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      },
+      "deathZoneTimer": {
+        "a": null,
+        "ha": null,
+        "va": null,
+        "h": null,
+        "y": null,
+        "w": null,
+        "debug": false,
+        "x": null
+      }
+    }
+  },
+  "finalStatistic": {
+    "startPage": 2,
+    "showChances": false,
+    "sortColumn": 4,
+    "showChancesExp": false
+  },
+  "turretMarkers": {
+    "lowVulnerability": "'",
+    "highVulnerability": "*"
+  },
+  "texts": {
+    "vtype": {
+      "SPG": "SPG",
+      "MT": "MT",
+      "TD": "TD",
+      "LT": "LT",
+      "HT": "HT"
+    }
+  },
+  "configVersion": "1.5.0",
+  "markers": {
+    "ally": {
+      "dead": {
+        "normal": {
+          "clanIcon": {
+            "y": -67,
+            "visible": false,
+            "h": 16,
+            "w": 16,
+            "alpha": 100,
+            "x": 0
+          },
+          "contourIcon": {
+            "y": -65,
+            "amount": 0,
+            "visible": false,
+            "alpha": 100,
+            "color": null,
+            "x": 6
+          },
+          "healthBar": {
+            "border": {
+              "size": 1,
+              "alpha": 30,
+              "color": "0x000000"
+            },
+            "y": -33,
+            "lcolor": null,
+            "visible": false,
+            "alpha": 100,
+            "x": -41,
+            "width": 80,
+            "height": 12,
+            "fill": {
+              "alpha": 30
+            },
+            "color": null,
+            "damage": {
+              "fade": 1,
+              "alpha": 80,
+              "color": null
+            }
+          },
+          "damageText": {
+            "x": 0,
+            "font": {
+              "align": "center",
+              "italic": false,
+              "size": 18,
+              "bold": false,
+              "name": "$FieldFont"
+            },
+            "y": -55,
+            "alpha": 100,
+            "visible": true,
+            "blowupMessage": "Blown-up!",
+            "speed": 2,
+            "damageMessage": "({{dmg}})",
+            "maxRange": 40,
+            "color": null,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            }
+          },
+          "actionMarker": {
+            "y": -55,
+            "visible": true,
+            "alpha": 100,
+            "x": 0
+          },
+          "textFields": [
+            {
+              "x": -21,
+              "y": 1,
+              "visible": true,
+              "color": null,
+              "name": "Tank Rating",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": "58",
+              "format": "<font face='$FieldFont' size='10' color='{{c:eff}}'><b>{{rating}}</b></font>"
+            }
+          ],
+          "vehicleIcon": {
+            "maxScale": 75,
+            "scaleX": 0,
+            "visible": true,
+            "alpha": 100,
+            "showSpeaker": false,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            },
+            "y": -8,
+            "scaleY": 16,
+            "color": null,
+            "x": 0
+          },
+          "levelIcon": {
+            "y": -21,
+            "visible": false,
+            "alpha": 100,
+            "x": 0
+          }
+        },
+        "extended": {
+          "clanIcon": {
+            "y": -67,
+            "visible": false,
+            "h": 16,
+            "w": 16,
+            "alpha": 100,
+            "x": 0
+          },
+          "contourIcon": {
+            "y": -65,
+            "amount": 0,
+            "visible": false,
+            "alpha": 100,
+            "color": null,
+            "x": 6
+          },
+          "healthBar": {
+            "border": {
+              "size": 1,
+              "alpha": 30,
+              "color": "0x000000"
+            },
+            "y": -33,
+            "lcolor": null,
+            "visible": false,
+            "alpha": 100,
+            "x": -41,
+            "width": 80,
+            "height": 12,
+            "fill": {
+              "alpha": 30
+            },
+            "color": null,
+            "damage": {
+              "fade": 1,
+              "alpha": 80,
+              "color": null
+            }
+          },
+          "damageText": {
+            "x": 0,
+            "font": {
+              "align": "center",
+              "italic": false,
+              "size": 18,
+              "bold": false,
+              "name": "$FieldFont"
+            },
+            "y": -55,
+            "alpha": 100,
+            "visible": true,
+            "blowupMessage": "Blown-up!",
+            "speed": 2,
+            "damageMessage": "({{dmg}})",
+            "maxRange": 40,
+            "color": null,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            }
+          },
+          "actionMarker": {
+            "y": -55,
+            "visible": true,
+            "alpha": 100,
+            "x": 0
+          },
+          "textFields": [
+            {
+              "x": 0,
+              "y": -18,
+              "visible": true,
+              "name": "Vehicle Name",
+              "shadow": {
+                "angle": 0,
+                "strength": 200,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": 80,
+              "format": "<font face='$FieldFont' size='13'><font color='#7BEC37'>{{vehicle}}</font></font>"
+            },
+            {
+              "x": -21,
+              "y": 1,
+              "visible": true,
+              "alpha": "58",
+              "name": "Tank Rating",
+              "format": "<font face='$FieldFont' size='10' color='{{c:eff}}'><b>{{rating}}</b></font>",
+              "color": null,
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            },
+            {
+              "x": 0,
+              "y": -32,
+              "visible": true,
+              "name": "Player Name",
+              "shadow": {
+                "angle": 0,
+                "strength": 200,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": 80,
+              "format": "<font face='$FieldFont' size='13'><font color='#B2EE37'>{{nick}}</font></font>"
+            }
+          ],
+          "vehicleIcon": {
+            "maxScale": 75,
+            "scaleX": 0,
+            "visible": true,
+            "alpha": 100,
+            "showSpeaker": false,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            },
+            "y": -8,
+            "scaleY": 16,
+            "color": null,
+            "x": 0
+          },
+          "levelIcon": {
+            "y": -21,
+            "visible": false,
+            "alpha": 100,
+            "x": 0
+          }
+        }
+      },
+      "alive": {
+        "normal": {
+          "clanIcon": {
+            "y": -67,
+            "visible": false,
+            "h": 16,
+            "w": 16,
+            "alpha": 100,
+            "x": 0
+          },
+          "contourIcon": {
+            "y": -65,
+            "amount": 30,
+            "visible": false,
+            "alpha": 100,
+            "color": null,
+            "x": 0
+          },
+          "healthBar": {
+            "border": {
+              "size": 1,
+              "alpha": 50,
+              "color": "0x000000"
+            },
+            "y": -24,
+            "lcolor": null,
+            "visible": true,
+            "alpha": 60,
+            "x": -41,
+            "width": 80,
+            "height": 13,
+            "fill": {
+              "alpha": 80
+            },
+            "color": null,
+            "damage": {
+              "fade": 1,
+              "alpha": 30,
+              "color": null
+            }
+          },
+          "damageText": {
+            "x": 0,
+            "font": {
+              "align": "center",
+              "italic": false,
+              "size": 18,
+              "bold": false,
+              "name": "$FieldFont"
+            },
+            "y": -55,
+            "alpha": 100,
+            "visible": true,
+            "blowupMessage": "Blown-up!",
+            "speed": 2,
+            "damageMessage": "{{dmg}}",
+            "maxRange": 40,
+            "color": null,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            }
+          },
+          "actionMarker": {
+            "y": -55,
+            "visible": true,
+            "alpha": 100,
+            "x": 0
+          },
+          "textFields": [
+            {
+              "x": 0,
+              "y": -26,
+              "visible": true,
+              "name": "Vehicle Name",
+              "format": "<font face='$FieldFont' size='13'>{{vehicle}}{{turret}}</font>",
+              "shadow": {
+                "angle": 0,
+                "strength": 200,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            },
+            {
+              "x": 0,
+              "y": -39,
+              "visible": false,
+              "name": "Dynamic HP",
+              "format": "<font face='$FieldFont' size='11' color='{{c:hp}}'><b>{{hp}}</b></font>",
+              "alpha": "{{a:hp}}",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            },
+            {
+              "format": "<font face='$FieldFont' size='11'><b>{{hp}} / {{hp-max}}</b></font>",
+              "y": -10,
+              "visible": true,
+              "color": "0xFFFFFF",
+              "name": "HP",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "font": {
+                "align": "center",
+                "size": 10,
+                "bold": true
+              },
+              "alpha": "86",
+              "x": 0
+            },
+            {
+              "x": -21,
+              "y": 1,
+              "visible": true,
+              "color": null,
+              "name": "Tank Rating",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": "58",
+              "format": "<font face='$FieldFont' size='10' color='{{c:eff}}'><b>{{rating}}</b></font>"
+            },
+            {
+              "x": -21,
+              "y": 5,
+              "visible": true,
+              "color": null,
+              "shadow": {
+                "angle": 90,
+                "strength": 200,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 6,
+                "alpha": 100
+              },
+              "font": {
+                "align": "center",
+                "italic": false,
+                "size": 13,
+                "bold": false,
+                "name": "$FieldFont"
+              },
+              "format": "<font size=9 color='{{c:wn}}'>{{wn}}</font>",
+              "alpha": 100,
+              "name": "damage"
+            }
+          ],
+          "vehicleIcon": {
+            "maxScale": 75,
+            "scaleX": 0,
+            "visible": true,
+            "alpha": 100,
+            "showSpeaker": false,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            },
+            "y": -8,
+            "scaleY": 16,
+            "color": null,
+            "x": 0
+          },
+          "levelIcon": {
+            "y": -21,
+            "visible": false,
+            "alpha": 100,
+            "x": 0
+          }
+        },
+        "extended": {
+          "clanIcon": {
+            "y": -67,
+            "visible": true,
+            "h": 16,
+            "w": 16,
+            "alpha": 100,
+            "x": 0
+          },
+          "contourIcon": {
+            "y": -65,
+            "amount": 30,
+            "visible": false,
+            "alpha": 100,
+            "color": null,
+            "x": 0
+          },
+          "healthBar": {
+            "border": {
+              "size": 1,
+              "alpha": 50,
+              "color": "0x000000"
+            },
+            "y": -24,
+            "lcolor": null,
+            "visible": true,
+            "alpha": 60,
+            "x": -41,
+            "width": 80,
+            "height": 13,
+            "fill": {
+              "alpha": 80
+            },
+            "color": null,
+            "damage": {
+              "fade": 1,
+              "alpha": 30,
+              "color": null
+            }
+          },
+          "damageText": {
+            "x": 0,
+            "font": {
+              "align": "center",
+              "italic": false,
+              "size": 18,
+              "bold": false,
+              "name": "$FieldFont"
+            },
+            "y": -55,
+            "alpha": 100,
+            "visible": true,
+            "blowupMessage": "Blown-up!",
+            "speed": 2,
+            "damageMessage": "{{dmg}}",
+            "maxRange": 40,
+            "color": null,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            }
+          },
+          "actionMarker": {
+            "y": -55,
+            "visible": true,
+            "alpha": 100,
+            "x": 0
+          },
+          "textFields": [
+            {
+              "x": 0,
+              "y": -39,
+              "visible": false,
+              "name": "Dynamic HP",
+              "format": "<font face='$FieldFont' size='11' color='{{c:hp}}'><b>{{hp}}</b></font>",
+              "alpha": "{{a:hp}}",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            },
+            {
+              "x": 0,
+              "y": -10,
+              "visible": true,
+              "alpha": "86",
+              "name": "HP",
+              "font": {
+                "align": "center",
+                "size": 10,
+                "bold": true
+              },
+              "format": "<font face='$FieldFont' size='11'><b>{{hp}} / {{hp-max}}</b></font>",
+              "color": "0xFFFFFF",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            },
+            {
+              "x": -21,
+              "y": 1,
+              "visible": true,
+              "color": null,
+              "name": "Tank Rating",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": "58",
+              "format": "<font face='$FieldFont' size='10' color='{{c:eff}}'><b>{{rating}}</b></font>"
+            },
+            {
+              "x": -21,
+              "y": 5,
+              "visible": true,
+              "color": null,
+              "shadow": {
+                "angle": 90,
+                "strength": 200,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 6,
+                "alpha": 100
+              },
+              "font": {
+                "align": "center",
+                "italic": false,
+                "size": 13,
+                "bold": false,
+                "name": "$FieldFont"
+              },
+              "format": "<font size=9 color='{{c:wn}}'>{{wn}}</font>",
+              "alpha": 100,
+              "name": "damage"
+            },
+            {
+              "format": "<font face='$FieldFont' size='13'>{{nick}}</font>",
+              "y": -26,
+              "visible": true,
+              "name": "Player Name",
+              "x": 0,
+              "shadow": {
+                "angle": 0,
+                "strength": 200,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            }
+          ],
+          "vehicleIcon": {
+            "maxScale": 75,
+            "scaleX": 0,
+            "visible": true,
+            "alpha": 100,
+            "showSpeaker": false,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            },
+            "y": -8,
+            "scaleY": 16,
+            "color": null,
+            "x": 0
+          },
+          "levelIcon": {
+            "y": -21,
+            "visible": false,
+            "alpha": 100,
+            "x": 0
+          }
+        }
+      }
+    },
+    "enemy": {
+      "dead": {
+        "normal": {
+          "clanIcon": {
+            "y": -67,
+            "visible": false,
+            "h": 16,
+            "w": 16,
+            "alpha": 100,
+            "x": 0
+          },
+          "contourIcon": {
+            "y": -65,
+            "amount": 0,
+            "visible": false,
+            "alpha": 100,
+            "color": null,
+            "x": 6
+          },
+          "healthBar": {
+            "border": {
+              "size": 1,
+              "alpha": 30,
+              "color": "0x000000"
+            },
+            "y": -33,
+            "lcolor": null,
+            "visible": false,
+            "alpha": 100,
+            "x": -41,
+            "width": 80,
+            "height": 12,
+            "fill": {
+              "alpha": 30
+            },
+            "color": null,
+            "damage": {
+              "fade": 1,
+              "alpha": 80,
+              "color": null
+            }
+          },
+          "damageText": {
+            "x": 0,
+            "font": {
+              "align": "center",
+              "italic": false,
+              "size": 18,
+              "bold": false,
+              "name": "$FieldFont"
+            },
+            "y": -65,
+            "alpha": 100,
+            "visible": true,
+            "blowupMessage": "<textformat leading='-5'>Blown-up!<br>{{vehicle}}</textformat>",
+            "speed": 2,
+            "damageMessage": "<textformat leading='-5'>({{dmg}})<br>{{vehicle}}</textformat>",
+            "maxRange": 40,
+            "color": null,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            }
+          },
+          "actionMarker": {
+            "y": -55,
+            "visible": true,
+            "alpha": 100,
+            "x": 0
+          },
+          "textFields": [
+			{
+              "x": -21,
+              "y": 1,
+              "visible": true,
+              "color": null,
+              "name": "Tank Rating",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": "58",
+              "format": "<font face='$FieldFont' size='10' color='{{c:eff}}'><b>{{rating}}</b></font>"
+            }
+          ],
+          "vehicleIcon": {
+            "maxScale": 75,
+            "scaleX": 0,
+            "visible": true,
+            "alpha": 100,
+            "showSpeaker": false,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            },
+            "y": -8,
+            "scaleY": 16,
+            "color": null,
+            "x": 0
+          },
+          "levelIcon": {
+            "y": -21,
+            "visible": false,
+            "alpha": 100,
+            "x": 0
+          }
+        },
+        "extended": {
+          "clanIcon": {
+            "y": -67,
+            "visible": false,
+            "h": 16,
+            "w": 16,
+            "alpha": 100,
+            "x": 0
+          },
+          "contourIcon": {
+            "y": -65,
+            "amount": 0,
+            "visible": false,
+            "alpha": 100,
+            "color": null,
+            "x": 6
+          },
+          "healthBar": {
+            "border": {
+              "size": 1,
+              "alpha": 30,
+              "color": "0x000000"
+            },
+            "y": -33,
+            "lcolor": null,
+            "visible": false,
+            "alpha": 100,
+            "x": -41,
+            "width": 80,
+            "height": 12,
+            "fill": {
+              "alpha": 30
+            },
+            "color": null,
+            "damage": {
+              "fade": 1,
+              "alpha": 80,
+              "color": null
+            }
+          },
+          "damageText": {
+            "x": 0,
+            "font": {
+              "align": "center",
+              "italic": false,
+              "size": 18,
+              "bold": false,
+              "name": "$FieldFont"
+            },
+            "y": -55,
+            "alpha": 100,
+            "visible": true,
+            "blowupMessage": "Blown-up!",
+            "speed": 2,
+            "damageMessage": "({{dmg}})",
+            "maxRange": 40,
+            "color": null,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            }
+          },
+          "actionMarker": {
+            "y": -55,
+            "visible": true,
+            "alpha": 100,
+            "x": 0
+          },
+          "textFields": [
+            {
+              "x": 0,
+              "y": -18,
+              "visible": true,
+              "name": "Vehicle Name",
+              "shadow": {
+                "angle": 0,
+                "strength": 200,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": 80,
+              "format": "<font face='$FieldFont' size='13'><font color='#EC3737'>{{vehicle}}</font></font>"
+            },
+            {
+              "x": -21,
+              "y": 1,
+              "visible": true,
+              "alpha": "58",
+              "name": "Tank Rating",
+              "format": "<font face='$FieldFont' size='10' color='{{c:eff}}'><b>{{rating}}</b></font>",
+              "color": null,
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            },
+            {
+              "x": 0,
+              "y": -32,
+              "visible": true,
+              "name": "Player Name",
+              "shadow": {
+                "angle": 0,
+                "strength": 200,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": 80,
+              "format": "<font face='$FieldFont' size='13'><font color='#FF6E0C'>{{nick}}</font></font>"
+            }
+          ],
+          "vehicleIcon": {
+            "maxScale": 75,
+            "scaleX": 0,
+            "visible": true,
+            "alpha": 100,
+            "showSpeaker": false,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            },
+            "y": -8,
+            "scaleY": 16,
+            "color": null,
+            "x": 0
+          },
+          "levelIcon": {
+            "y": -21,
+            "visible": false,
+            "alpha": 100,
+            "x": 0
+          }
+        }
+      },
+      "alive": {
+        "normal": {
+          "clanIcon": {
+            "y": -67,
+            "visible": false,
+            "h": 16,
+            "w": 16,
+            "alpha": 100,
+            "x": 0
+          },
+          "contourIcon": {
+            "y": -65,
+            "amount": 30,
+            "visible": false,
+            "alpha": 100,
+            "color": null,
+            "x": 0
+          },
+          "healthBar": {
+            "border": {
+              "size": 1,
+              "alpha": 50,
+              "color": "0x000000"
+            },
+            "y": -24,
+            "lcolor": null,
+            "visible": true,
+            "alpha": 60,
+            "x": -41,
+            "width": 80,
+            "height": 13,
+            "fill": {
+              "alpha": 80
+            },
+            "color": null,
+            "damage": {
+              "fade": 1,
+              "alpha": 30,
+              "color": null
+            }
+          },
+          "damageText": {
+            "x": 0,
+            "font": {
+              "align": "center",
+              "italic": false,
+              "size": 18,
+              "bold": false,
+              "name": "$FieldFont"
+            },
+            "y": -55,
+            "alpha": 100,
+            "visible": true,
+            "blowupMessage": "Blown-up!",
+            "speed": 2,
+            "damageMessage": "{{dmg}}",
+            "maxRange": 40,
+            "color": null,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            }
+          },
+          "actionMarker": {
+            "y": -55,
+            "visible": true,
+            "alpha": 100,
+            "x": 0
+          },
+          "textFields": [
+            {
+              "x": 0,
+              "y": -26,
+              "visible": true,
+              "name": "Vehicle Name",
+              "shadow": {
+                "angle": 0,
+                "strength": 200,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "format": "<font face='$FieldFont' size='13'>{{vehicle}}{{turret}}</font>"
+            },
+            {
+              "x": 0,
+              "y": -39,
+              "visible": false,
+              "name": "Dynamic HP",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": "{{a:hp}}",
+              "format": "<font face='$FieldFont' size='11' color='{{c:hp}}'><b>{{hp}}</b></font>"
+            },
+            {
+              "format": "<font face='$FieldFont' size='11'><b>{{hp}} / {{hp-max}}</b></font>",
+              "y": -10,
+              "visible": true,
+              "alpha": "86",
+              "name": "HP",
+              "font": {
+                "align": "center",
+                "size": 10,
+                "bold": true
+              },
+              "x": 0,
+              "color": "0xFFFFFF",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            },
+            {
+              "x": -21,
+              "y": 1,
+              "visible": true,
+              "alpha": "58",
+              "name": "Tank Rating",
+              "format": "<font face='$FieldFont' size='10' color='{{c:eff}}'><b>{{rating}}</b></font>",
+              "color": null,
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 3,
+                "alpha": 100
+              }
+            },
+            {
+              "x": -21,
+              "y": 5,
+              "visible": true,
+              "color": null,
+              "shadow": {
+                "angle": 90,
+                "strength": 200,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 6,
+                "alpha": 100
+              },
+              "font": {
+                "align": "center",
+                "italic": false,
+                "size": 13,
+                "bold": false,
+                "name": "$FieldFont"
+              },
+              "format": "<font size=9 color='{{c:wn}}'>{{wn}}</font>",
+              "alpha": 100,
+              "name": "damage"
+            }
+          ],
+          "vehicleIcon": {
+            "maxScale": 75,
+            "scaleX": 0,
+            "visible": true,
+            "alpha": 100,
+            "showSpeaker": false,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            },
+            "y": -8,
+            "scaleY": 16,
+            "color": null,
+            "x": 0
+          },
+          "levelIcon": {
+            "y": -21,
+            "visible": false,
+            "alpha": 100,
+            "x": 0
+          }
+        },
+        "extended": {
+          "clanIcon": {
+            "y": -67,
+            "visible": true,
+            "h": 16,
+            "w": 16,
+            "alpha": 100,
+            "x": 0
+          },
+          "contourIcon": {
+            "y": -65,
+            "amount": 30,
+            "visible": false,
+            "alpha": 100,
+            "color": null,
+            "x": 0
+          },
+          "healthBar": {
+            "border": {
+              "size": 1,
+              "alpha": 50,
+              "color": "0x000000"
+            },
+            "y": -24,
+            "lcolor": null,
+            "visible": true,
+            "alpha": 60,
+            "x": -41,
+            "width": 80,
+            "height": 13,
+            "fill": {
+              "alpha": 80
+            },
+            "color": null,
+            "damage": {
+              "fade": 1,
+              "alpha": 30,
+              "color": null
+            }
+          },
+          "damageText": {
+            "x": 0,
+            "font": {
+              "align": "center",
+              "italic": false,
+              "size": 18,
+              "bold": false,
+              "name": "$FieldFont"
+            },
+            "y": -55,
+            "alpha": 100,
+            "visible": true,
+            "blowupMessage": "Blown-up!",
+            "speed": 2,
+            "damageMessage": "{{dmg}}",
+            "maxRange": 40,
+            "color": null,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            }
+          },
+          "actionMarker": {
+            "y": -55,
+            "visible": true,
+            "alpha": 100,
+            "x": 0
+          },
+          "textFields": [
+            {
+              "x": 0,
+              "y": -39,
+              "visible": false,
+              "name": "Dynamic HP",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": "{{a:hp}}",
+              "format": "<font face='$FieldFont' size='11' color='{{c:hp}}'><b>{{hp}}</b></font>"
+            },
+            {
+              "format": "<font face='$FieldFont' size='11'><b>{{hp}} / {{hp-max}}</b></font>",
+              "y": -10,
+              "visible": true,
+              "color": "0xFFFFFF",
+              "name": "HP",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "font": {
+                "align": "center",
+                "size": 10,
+                "bold": true
+              },
+              "alpha": "86",
+              "x": 0
+            },
+            {
+              "x": -21,
+              "y": 1,
+              "visible": true,
+              "color": null,
+              "name": "Tank Rating",
+              "shadow": {
+                "angle": 0,
+                "strength": 150,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "alpha": "58",
+              "format": "<font face='$FieldFont' size='10' color='{{c:eff}}'><b>{{rating}}</b></font>"
+            },
+            {
+              "x": -21,
+              "y": 5,
+              "visible": true,
+              "color": null,
+              "shadow": {
+                "angle": 90,
+                "strength": 200,
+                "color": "0x000000",
+                "distance": 0,
+                "size": 6,
+                "alpha": 100
+              },
+              "font": {
+                "align": "center",
+                "italic": false,
+                "size": 13,
+                "bold": false,
+                "name": "$FieldFont"
+              },
+              "format": "<font size=9 color='{{c:wn}}'>{{wn}}</font>",
+              "alpha": 100,
+              "name": "damage"
+            },
+            {
+              "format": "<font face='$FieldFont' size='13'>{{nick}}</font>",
+              "y": -26,
+              "visible": true,
+              "name": "Player Name",
+              "shadow": {
+                "angle": 0,
+                "strength": 200,
+                "alpha": 100,
+                "distance": 0,
+                "size": 3,
+                "color": "0x000000"
+              },
+              "x": 0
+            }
+          ],
+          "vehicleIcon": {
+            "maxScale": 75,
+            "scaleX": 0,
+            "visible": true,
+            "alpha": 100,
+            "showSpeaker": false,
+            "shadow": {
+              "angle": 90,
+              "strength": 200,
+              "alpha": 100,
+              "distance": 0,
+              "size": 6,
+              "color": "0x000000"
+            },
+            "y": -8,
+            "scaleY": 16,
+            "color": null,
+            "x": 0
+          },
+          "levelIcon": {
+            "y": -21,
+            "visible": false,
+            "alpha": 100,
+            "x": 0
+          }
+        }
+      }
+    }
+  },
+  "iconset": {
+    "battleLoading": "../../../icons/HARDicons/",
+    "playersPanel": "../../../icons/HARDicons/",
+    "vehicleMarker": "../../../icons/Aslain/iconset2/",
+    "statisticForm": "../../../icons/HARDicons/"
+  },
+  "editorVersion": "0.41",
+  "hitLog": {
+    "formatHeader": "<textformat leading='-2'><font color='#CCCCCC'>Total:</font> <font size='13'>#{{n}}</font> <b>{{dmg-total}}</b>  <font color='#CCCCCC'>Last:</font> <font color='{{c:dmg-kind}}'><b>{{dmg}}</b></font></font></textformat>",
+    "h": 230,
+    "formatHistory": "<textformat leading='-4' tabstops='[20,50,90,150]'><font size='12'>×{{n-player}}:</font><tab>{{dmg-player}}<tab>| <font color='{{c:dmg-kind}}'>{{dmg}}</font><tab>| <font color='{{c:dmg-kind}}'>{{dmg-kind}}</font><tab> | <font color='{{c:eff}}'>{{name}}</font> <tab>| <font color='{{c:vtype}}'>{{vehicle}}{{dead}}</font></textformat>",
+    "w": 750,
+    "lines": 20,
+    "x": 235,
+    "insertOrder": "end",
+    "y": -180,
+    "groupHitsByPlayer": true,
+    "visible": true,
+    "shadow": {
+      "angle": 45,
+      "strength": 150,
+      "alpha": 100,
+      "distance": 0,
+      "size": 5,
+      "color": "0x000000"
+    },
+    "blowupMarker": "<font face='Wingdings'>M</font>",
+    "direction": "down",
+    "defaultHeader": "<font color='#FFFFFF'>Hits:</font> <font size='13'>#0</font>",
+    "deadMarker": "<font face='Wingdings'>N</font>"
+  },
+  "statisticForm": {
+    "clanIcon": {
+      "xr": 4,
+      "y": 6,
+      "yr": 6,
+      "h": 16,
+      "show": true,
+      "w": 16,
+      "alpha": 90,
+      "x": 4
+    },
+    "showChances": true,
+    "showChancesExp": true,
+    "removeSquadIcon": false,
+    "formatLeft": "{{vehicle}} <font face='Consolas' size='10'><font color='{{c:kb}}'>{{kb:3}}</font><font color='#FFFFFF'>@</font><font color='{{c:rating}}'>{{rating:3}}</font>[<font color='{{c:t-rating}}'>{{t-rating:3}}</font>]<font color='{{c:wn}}'>{{wn}}</font></font>",
+    "formatRight": "<font face='Consolas' size='10'><font color='{{c:wn}}'>{{wn}}</font>[<font color='{{c:t-rating}}'>{{t-rating:3}}</font>]<font color='{{c:kb}}'>{{kb:3}}</font><font color='#FFFFFF'>@</font><font color='{{c:rating}}'>{{rating:3}}</font></font> {{vehicle}}"
+  },
+  "playersPanel": {
+    "clanIcon": {
+      "xr": 4,
+      "y": 6,
+      "yr": 6,
+      "h": 16,
+      "show": true,
+      "w": 16,
+      "alpha": 90,
+      "x": 4
+    },
+    "medium2": {
+      "width": 65,
+      "formatLeft": "<font color='{{c:eff}}'>{{vehicle}}</font>",
+      "formatRight": "<font color='{{c:eff}}'>{{vehicle}}</font>"
+    },
+    "iconAlpha": 100,
+    "large": {
+      "width": 120,
+      "nickFormatLeft": "<font color='{{c:eff}}'>{{rating}}</font> {{nick}}",
+      "vehicleFormatRight": "",
+      "nickFormatRight": "{{nick}} <font color='{{c:eff}}'>{{rating}}</font>",
+      "vehicleFormatLeft": ""
+    },
+    "removeSquadIcon": true,
+    "medium": {
+      "width": 46,
+      "formatLeft": "<font color='{{c:eff}}'>{{nick}}</font>",
+      "formatRight": "<font color='{{c:eff}}'>{{nick}}</font>"
+    },
+    "alpha": 50
+  },
+  "rating": {
+    "enableCompanyStatistics": false,
+    "enableStatisticsLog": true,
+    "showPlayersStatistics": true,
+    "enableUserInfoStatistics": true,
+    "loadEnemyStatsInFogOfWar": true
+  },
+  "definition": {
+    "modMinVersion": "3.0.4",
+    "description": "Sirmax's settings for XVM",
+    "url": "http://code.google.com/p/wot-xvm/",
+    "author": "sirmax2",
+    "date": "10.10.2012",
+    "gameVersion": "0.8.0"
+  },
+  "captureBar": {
+    "enabled": true,
+    "primaryTitleOffset": 7,
+    "appendPlus": true,
+    "ally": {
+      "extra": "tanks: <b><font color='#FFCC66'>{{tanks}}</font></b> Timeleft: <b><font color='#FFCC66'>{{time}}</font><b>",
+      "primaryTitleFormat": "<font size='15' color='#FFFFFF'>{{extra}}</font>",
+      "secondaryTitleFormat": "<font size='15' color='#FFFFFF'>{{points}}</font>",
+      "captureDoneFormat": "<font size='17' color='#FFCC66'>Ally base captured!</font>",
+      "shadow": {
+        "color": "0x000000",
+        "strength": 3,
+        "blur": 6,
+        "alpha": 50
+      }
+    },
+    "enemy": {
+      "extra": "tanks: <b><font color='#FFCC66'>{{tanks}}</font></b> Timeleft: <b><font color='#FFCC66'>{{time}}</font><b>",
+      "primaryTitleFormat": "<font size='15' color='#FFFFFF'>{{extra}}</font>",
+      "secondaryTitleFormat": "<font size='15' color='#FFFFFF'>{{points}}</font>",
+      "captureDoneFormat": "<font size='17' color='#FFCC66'>Enemy base captured!</font>",
+      "shadow": {
+        "color": "0x000000",
+        "strength": 3,
+        "blur": 6,
+        "alpha": 50
+      }
+    }
+  },
+  "battleLoading": {
+    "clanIcon": {
+      "xr": 4,
+      "y": 6,
+      "yr": 6,
+      "h": 16,
+      "show": true,
+      "w": 16,
+      "alpha": 90,
+      "x": 4
+    },
+    "showChances": true,
+    "showChancesExp": true,
+    "clockFormat": "D.M.Y  -  H:N:S",
+    "removeSquadIcon": false,
+	"formatLeft": "{{vehicle}} <font face='Consolas' size='10'><font color='{{c:kb}}'>{{kb:3}}</font><font color='#FFFFFF'>@</font><font color='{{c:rating}}'>{{rating:3}}</font>[<font color='{{c:t-rating}}'>{{t-rating:3}}</font>]<font color='{{c:wn}}'>{{wn}}</font></font>",
+	"formatRight": "<font face='Consolas' size='10'><font color='{{c:wn}}'>{{wn}}</font>[<font color='{{c:t-rating}}'>{{t-rating:3}}</font>]<font color='{{c:kb}}'>{{kb:3}}</font><font color='#FFFFFF'>@</font><font color='{{c:rating}}'>{{rating:3}}</font></font> {{vehicle}}"
+  },
+  "vehicleNames": {
+    "usa_M48A1": null,
+    "ussr_ISU_152": null,
+    "uk_GB11_Caernarvon": null,
+    "ussr_SU_85I": null,
+    "germany_S35_captured": null,
+    "ussr_KV_13": null,
+    "uk_GB08_Churchill_I": null,
+    "ussr_T_43": null,
+    "france_AMX50_Foch": null,
+    "usa_T1_hvy": null,
+    "ussr_T62A": null,
+    "china_Ch08_Type97_Chi_Ha": null,
+    "france_AMX38": null,
+    "france_BDR_G1B": null,
+    "usa_T95": null,
+    "uk_GB59_Cruiser_Mk_IV": null,
+    "ussr_KV1": null,
+    "china_Ch02_Type62": null,
+    "usa_M3_Stuart": null,
+    "uk_GB69_Cruiser_Mk_II": null,
+    "usa_M22_Locust": null,
+    "usa_MTLS_1G14": null,
+    "usa_T30": null,
+    "france_Lorraine155_50": null,
+    "france_AMX_13_75": null,
+    "germany_JagdTiger": null,
+    "usa_T71": null,
+    "china_Ch16_WZ_131": null,
+    "germany_PzIII_A": null,
+    "usa_M12": null,
+    "usa_T34_hvy": null,
+    "germany_T_15": null,
+    "ussr_SU_14": null,
+    "ussr_SU122_54": null,
+    "germany_G_Panther": null,
+    "china_Ch21_T34": null,
+    "germany_Pz_II_AusfG": null,
+    "usa_Ram_II": null,
+    "ussr_Object_704": null,
+    "germany_Pz38t": null,
+    "china_Ch12_111_1_2_3": null,
+    "ussr_T_46": null,
+    "usa_T32": null,
+    "ussr_BT_7": null,
+    "ussr_SU_18": null,
+    "france_RenaultBS": null,
+    "uk_GB12_Conqueror": null,
+    "usa_T57": null,
+    "usa_M6A2E1": null,
+    "uk_GB39_Universal_CarrierQF2": null,
+    "france_AMX_50_100": null,
+    "ussr_KV": null,
+    "france_RenaultFT_AC": null,
+    "usa_M4_Sherman": null,
+    "france_AMX_50_120": null,
+    "germany_T_25": null,
+    "usa_M103": null,
+    "china_Ch01_Type59_gold": null,
+    "usa_M7_med": null,
+    "china_Ch01_Type59": null,
+    "usa_T18": null,
+    "germany_VK4502P": null,
+    "germany_PzIV": null,
+    "germany_PzI_ausf_C": null,
+    "usa_T26_E4_SuperPershing": null,
+    "germany_JagdTiger_SdKfz_185": null,
+    "france_FCM_50t": null,
+    "ussr_Object252": null,
+    "germany_E_75": null,
+    "france_ARL_V39": null,
+    "ussr_KV_5": null,
+    "usa_M36_Slagger": null,
+    "uk_GB40_Gun_Carrier_Churchill": null,
+    "germany_Panther_M10": null,
+    "ussr_ST_I": null,
+    "uk_GB63_TOG_II": null,
+    "germany_PzV_PzIV_ausf_Alfa": null,
+    "ussr_IS8": null,
+    "germany_PanzerJager_I": null,
+    "germany_VK4502A": null,
+    "ussr_SU_100": null,
+    "germany_PzVIB_Tiger_II_training": null,
+    "uk_GB24_Centurion_Mk3": null,
+    "germany_PzV_PzIV": null,
+    "france_Lorraine40t": null,
+    "china_Ch18_WZ_120": null,
+    "usa_M24_Chaffee": null,
+    "germany_DickerMax": null,
+    "ussr_T_50_2": null,
+    "ussr_SU100Y": null,
+    "uk_GB20_Crusader": null,
+    "uk_GB09_Churchill_VII": null,
+    "uk_GB68_Matilda_Black_Prince": null,
+    "germany_Lowe": null,
+    "france_ELC_AMX": null,
+    "ussr_KV4": null,
+    "ussr_IS_3": null,
+    "ussr_T_34": null,
+    "china_Ch05_T34_2": null,
+    "uk_GB58_Cruiser_Mk_III": null,
+    "ussr_T150": null,
+    "usa_M18_Hellcat": null,
+    "ussr_KV_220_action": null,
+    "china_Ch07_Vickers_MkE_Type_BT26": null,
+    "ussr_KV2": null,
+    "france_Hotchkiss_H35": null,
+    "uk_GB23_Centurion": null,
+    "germany_JagdPzIV": null,
+    "usa_T14": null,
+    "usa_M46_Patton": null,
+    "ussr_KV_1s": null,
+    "usa_M6": null,
+    "germany_PzVIB_Tiger_II": null,
+    "usa_T23": null,
+    "ussr_S_51": null,
+    "usa_Pershing": null,
+    "germany_VK1602": null,
+    "usa_M4A2E4": null,
+    "china_Ch20_Type58": null,
+    "ussr_Churchill_LL": null,
+    "uk_GB21_Cromwell": null,
+    "germany_E_50": null,
+    "usa_T69": null,
+    "uk_GB05_Vickers_Medium_Mk_II": null,
+    "usa_T1_E6": null,
+    "germany_Grille": null,
+    "france__105_leFH18B2": null,
+    "uk_GB74_AT8": null,
+    "usa_M7_Priest": null,
+    "germany_Panther_II": null,
+    "ussr_KV_220": null,
+    "ussr_T_54": null,
+    "germany_PzIV_Hydro": null,
+    "uk_GB57_Alecto": null,
+    "usa_M4A3E8_Sherman": null,
+    "uk_GB04_Valentine": null,
+    "uk_GB60_Covenanter": null,
+    "france_AMX40": null,
+    "ussr_Matilda_II_LL": null,
+    "usa_T40": null,
+    "france_ARL_44": null,
+    "germany_Pz35t": null,
+    "china_Ch17_WZ131_1_WZ132": null,
+    "usa_M8A1": null,
+    "usa_M4A3E8_Sherman_training": null,
+    "ussr_A_32": null,
+    "france_Bat_Chatillon155": null,
+    "france_AMX_13_90": null,
+    "germany_B_1bis_captured": null,
+    "usa_T54E1": null,
+    "germany_Hetzer": null,
+    "france_Lorraine155_51": null,
+    "ussr_T_26": null,
+    "usa_M40M43": null,
+    "ussr_Valentine_LL": null,
+    "ussr_T_44": null,
+    "ussr_T_50": null,
+    "ussr_T_34_85_training": null,
+    "china_Ch15_59_16": null,
+    "ussr_GAZ_74b": null,
+    "france_AMX_12t": null,
+    "germany_G_Tiger": null,
+    "ussr_Object_212": null,
+    "germany_VK3601H": null,
+    "ussr_BT_2": null,
+    "germany_VK3001P": null,
+    "uk_GB75_AT7": null,
+    "ussr_T_34_85": null,
+    "germany_VK2801": null,
+    "france_Somua_Sau_40": null,
+    "usa_Sexton_I": null,
+    "uk_GB07_Matilda": null,
+    "uk_GB71_AT_15A": null,
+    "usa_T21": null,
+    "france_AMX_AC_Mle1946": null,
+    "germany_VK3001H": null,
+    "uk_GB32_Tortoise": null,
+    "france_AMX_13F3AM": null,
+    "ussr_T_127": null,
+    "usa_M41": null,
+    "germany_G_E": null,
+    "usa_T25_AT": null,
+    "ussr_SU_8": null,
+    "usa_T92": null,
+    "germany_PzIII": null,
+    "usa_T25_2": null,
+    "germany_JagdPanther": null,
+    "germany_Hummel": null,
+    "ussr_SU_152": null,
+    "france_B1": null,
+    "germany_PzII_J": null,
+    "ussr_T_28": null,
+    "ussr_BT_SV": null,
+    "germany_Ltraktor": null,
+    "china_Ch09_M5": null,
+    "ussr_SU122_44": null,
+    "ussr_M3_Stuart_LL": null,
+    "uk_GB73_AT2": null,
+    "germany_PzI": null,
+    "china_Ch06_Renault_NC31": null,
+    "germany_PzIII_training": null,
+    "usa_T2_lt": null,
+    "usa_Sherman_Jumbo": null,
+    "ussr_MS_1": null,
+    "germany_PzIV_schmalturm": null,
+    "germany_Bison_I": null,
+    "ussr_SU100M1": null,
+    "uk_GB48_FV215b_183": null,
+    "ussr_SU_5": null,
+    "germany_Pz38_NA": null,
+    "germany_PzII_Luchs": null,
+    "china_Ch10_IS2": null,
+    "ussr_AT_1": null,
+    "france_AMX_105AM": null,
+    "uk_GB03_Cruiser_Mk_I": null,
+    "germany_PzIII_IV": null,
+    "usa_T1_Cunningham": null,
+    "france_AMX_50Fosh_155": null,
+    "france_S_35CA": null,
+    "usa_M5_Stuart": null,
+    "usa_M2_lt": null,
+    "usa_T110E4": null,
+    "usa_M3_Grant": null,
+    "france_AMX_M4_1945": null,
+    "uk_GB10_Black_Prince": null,
+    "usa_M37": null,
+    "ussr_A_20": null,
+    "germany_Wespe": null,
+    "france_D1": null,
+    "usa_T49": null,
+    "germany_PzII": null,
+    "usa_T110E3": null,
+    "ussr_Tetrarch_LL": null,
+    "france_Lorraine39_L_AM": null,
+    "france_RenaultFT": null,
+    "uk_GB01_Medium_Mark_I": null,
+    "usa_M10_Wolverine": null,
+    "germany_H39_captured": null,
+    "ussr_SU_26": null,
+    "germany_JagdPz_E100": null,
+    "uk_GB42_Valentine_AT": null,
+    "germany_Sturmpanzer_II": null,
+    "ussr_Object268": null,
+    "usa_T2_med": null,
+    "ussr_Object263": null,
+    "france_RenaultUE57": null,
+    "china_Ch22_113": null,
+    "germany_PzVI_Tiger_P": null,
+    "uk_GB72_AT15": null,
+    "ussr_Object_261": null,
+    "usa_M2_med": null,
+    "germany_PzVI": null,
+    "usa_T29": null,
+    "ussr_KV_3": null,
+    "uk_GB13_FV215b": null,
+    "france_F10_AMX_50B": null,
+    "france_FCM_36Pak40": null,
+    "usa_T82": null,
+    "france_AMX_AC_Mle1948": null,
+    "usa_T57_58": null,
+    "usa_T110": null,
+    "ussr_SU_85": null,
+    "usa_T28_Prototype": null,
+    "germany_Maus": null,
+    "ussr_SU_76": null,
+    "usa_T28": null,
+    "china_Ch04_T34_1_training": null,
+    "germany_G20_Marder_II": null,
+    "china_Ch04_T34_1": null,
+    "ussr_IS": null,
+    "germany_StuGIII": null,
+    "ussr_IS_7": null,
+    "ussr_IS_4": null,
+    "unknown": null,
+    "uk_GB06_Vickers_Medium_Mk_III": null,
+    "ussr_SU_101": null,
+    "germany_JagdPantherII": null,
+    "usa_T20": null,
+    "germany_Ferdinand": null,
+    "uk_GB70_FV4202_105": null,
+    "france_Bat_Chatillon25t": null,
+    "china_Ch19_121": null,
+    "germany_VK3002DB": null,
+    "uk_GB22_Comet": null,
+    "germany_E_100": null,
+    "germany_E50_Ausf_M": null,
+    "france_D2": null,
+    "germany_PzV_training": null,
+    "china_Ch11_110": null,
+    "germany_PzV": null,
+    "china_Ch03_WZ_111": null
+  },
+  "colors": {
+    "twr": [
+      {
+        "value": 47,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 49,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 52,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 57,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 62,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 101,
+        "color": "0xD042F3"
+      }
+    ],
+    "kb": [
+      {
+        "value": 2,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 5,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 9,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 14,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 20,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 999,
+        "color": "0xD042F3"
+      }
+    ],
+    "vtype": {
+      "SPG": "0xEFAEFF",
+      "TD": "0xA0CFFF",
+      "premium": "0xFFCC66",
+      "usePremiumColor": false,
+      "MT": "0xFFF198",
+      "LT": "0xA2FF9A",
+      "HT": "0xFFACAC"
+    },
+    "tdb": [
+      {
+        "value": 1,
+        "color": "0xFCFCFC"
+      },
+      {
+        "value": 500,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 1000,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 2000,
+        "color": "0x60FF00"
+      }
+    ],
+    "wn": [
+      {
+        "value": 435,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 805,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 1200,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 1595,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 1900,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 9999,
+        "color": "0xD042F3"
+      }
+    ],
+    "rating": [
+      {
+        "value": 47,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 49,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 52,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 57,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 64,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 101,
+        "color": "0xD042F3"
+      }
+    ],
+    "tdv": [
+      {
+        "value": 0.1,
+        "color": "0xFCFCFC"
+      },
+      {
+        "value": 0.6,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 0.8,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 1,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 1.3,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 2,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 15,
+        "color": "0xD042F3"
+      }
+    ],
+    "system": {
+      "ally_blowedup_blind": "0x007700",
+      "teamKiller_blowedup_normal": "0x096A75",
+      "squadman_alive_normal": "0xFFB964",
+      "teamKiller_blowedup_blind": "0x096A75",
+      "squadman_alive_blind": "0xFFFF00",
+      "enemy_alive_normal": "0xF50800",
+      "squadman_dead_normal": "0xCA7000",
+      "enemy_alive_blind": "0x8379FE",
+      "squadman_dead_blind": "0xAAAA00",
+      "enemy_dead_normal": "0x840500",
+      "squadman_blowedup_normal": "0xA45A00",
+      "enemy_dead_blind": "0x47407A",
+      "ally_alive_normal": "0x96FF00",
+      "squadman_blowedup_blind": "0x888800",
+      "enemy_blowedup_normal": "0x5A0401",
+      "ally_alive_blind": "0x96FF00",
+      "teamKiller_alive_normal": "0x00EAFF",
+      "enemy_blowedup_blind": "0x3B365F",
+      "ally_dead_normal": "0x009900",
+      "teamKiller_alive_blind": "0x00EAFF",
+      "ally_dead_blind": "0x009900",
+      "teamKiller_dead_normal": "0x097783",
+      "ally_blowedup_normal": "0x007700",
+      "teamKiller_dead_blind": "0x097783"
+    },
+    "dmg_kind": {
+      "ramming": "0x998855",
+      "attack": "0xFFAA55",
+      "world_collision": "0x998855",
+      "fire": "0xFF6655",
+      "other": "0xCCCCCC"
+    },
+    "damage": {
+      "squadman_allytk_hit": "0x00EAFF",
+      "player_enemy_kill": "0xFFDD33",
+      "squadman_allytk_kill": "0x00EAFF",
+      "player_enemy_blowup": "0xFFDD33",
+      "squadman_allytk_blowup": "0x00EAFF",
+      "player_allytk_hit": "0xFFDD33",
+      "squadman_enemytk_hit": "0xF50800",
+      "player_allytk_kill": "0xFFDD33",
+      "squadman_enemytk_kill": "0xF50800",
+      "player_allytk_blowup": "0xFFDD33",
+      "squadman_enemytk_blowup": "0xF50800",
+      "player_enemytk_hit": "0xFFDD33",
+      "enemy_ally_hit": "0x96FF00",
+      "player_enemytk_kill": "0xFFDD33",
+      "enemy_ally_kill": "0x96FF00",
+      "player_enemytk_blowup": "0xFFDD33",
+      "enemy_ally_blowup": "0x96FF00",
+      "enemy_squadman_hit": "0xFFB964",
+      "enemy_squadman_kill": "0xFFB964",
+      "enemy_squadman_blowup": "0xFFB964",
+      "enemy_enemy_hit": "0xF50800",
+      "enemy_enemy_kill": "0xF50800",
+      "enemy_enemy_blowup": "0xF50800",
+      "enemy_allytk_hit": "0x96FF00",
+      "enemy_allytk_kill": "0x96FF00",
+      "enemy_allytk_blowup": "0x96FF00",
+      "enemy_enemytk_hit": "0xF50800",
+      "ally_ally_hit": "0x00EAFF",
+      "enemy_enemytk_kill": "0xF50800",
+      "ally_ally_kill": "0x00EAFF",
+      "enemy_enemytk_blowup": "0xF50800",
+      "ally_ally_blowup": "0x00EAFF",
+      "unknown_ally_hit": "0x96FF00",
+      "ally_squadman_hit": "0x00EAFF",
+      "unknown_ally_kill": "0x96FF00",
+      "ally_squadman_kill": "0x00EAFF",
+      "unknown_ally_blowup": "0x96FF00",
+      "ally_squadman_blowup": "0x00EAFF",
+      "unknown_squadman_hit": "0xFFB964",
+      "ally_enemy_hit": "0xF50800",
+      "unknown_squadman_kill": "0xFFB964",
+      "ally_enemy_kill": "0xF50800",
+      "unknown_squadman_blowup": "0xFFB964",
+      "ally_enemy_blowup": "0xF50800",
+      "unknown_enemy_hit": "0xF50800",
+      "ally_allytk_hit": "0x00EAFF",
+      "unknown_enemy_kill": "0xF50800",
+      "ally_allytk_kill": "0x00EAFF",
+      "unknown_enemy_blowup": "0xF50800",
+      "ally_allytk_blowup": "0x00EAFF",
+      "unknown_allytk_hit": "0x96FF00",
+      "ally_enemytk_hit": "0xF50800",
+      "unknown_allytk_kill": "0x96FF00",
+      "ally_enemytk_kill": "0xF50800",
+      "unknown_allytk_blowup": "0x96FF00",
+      "ally_enemytk_blowup": "0xF50800",
+      "unknown_enemytk_hit": "0xF50800",
+      "squadman_ally_hit": "0x00EAFF",
+      "unknown_enemytk_kill": "0xF50800",
+      "squadman_ally_kill": "0x00EAFF",
+      "unknown_enemytk_blowup": "0xF50800",
+      "squadman_ally_blowup": "0x00EAFF",
+      "player_ally_hit": "0xFFDD33",
+      "squadman_squadman_hit": "0x00EAFF",
+      "player_ally_kill": "0xFFDD33",
+      "squadman_squadman_kill": "0x00EAFF",
+      "player_ally_blowup": "0xFFDD33",
+      "squadman_squadman_blowup": "0x00EAFF",
+      "player_squadman_hit": "0xFFDD33",
+      "squadman_enemy_hit": "0xF50800",
+      "player_squadman_kill": "0xFFDD33",
+      "squadman_enemy_kill": "0xF50800",
+      "player_squadman_blowup": "0xFFDD33",
+      "squadman_enemy_blowup": "0xF50800",
+      "player_enemy_hit": "0xFFDD33"
+    },
+    "hp_ratio": [
+      {
+        "value": 10,
+        "color": "0xFF0000"
+      },
+      {
+        "value": 25,
+        "color": "0xDD4444"
+      },
+      {
+        "value": 50,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 101,
+        "color": "0xFCFCFC"
+      }
+    ],
+    "tfb": [
+      {
+        "value": 0.1,
+        "color": "0xFCFCFC"
+      },
+      {
+        "value": 0.6,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 0.8,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 1,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 1.3,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 2,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 15,
+        "color": "0xD042F3"
+      }
+    ],
+    "e": [
+      {
+        "value": 0.1,
+        "color": "0xFCFCFC"
+      },
+      {
+        "value": 2,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 4,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 5,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 7,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 9,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 20,
+        "color": "0xD042F3"
+      }
+    ],
+    "x": [
+      {
+        "value": 17,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 34,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 53,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 76,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 93,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 999,
+        "color": "0xD042F3"
+      }
+    ],
+    "tsb": [
+      {
+        "value": 0.1,
+        "color": "0xFCFCFC"
+      },
+      {
+        "value": 0.6,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 0.8,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 1,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 1.3,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 2,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 15,
+        "color": "0xD042F3"
+      }
+    ],
+    "t_battles": [
+      {
+        "value": 100,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 250,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 500,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 1000,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 1800,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 99999,
+        "color": "0xD042F3"
+      }
+    ],
+    "hp": [
+      {
+        "value": 201,
+        "color": "0xFF0000"
+      },
+      {
+        "value": 401,
+        "color": "0xDD4444"
+      },
+      {
+        "value": 1001,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 9999,
+        "color": "0xFCFCFC"
+      }
+    ],
+    "eff": [
+      {
+        "value": 645,
+        "color": "0xFE0E00"
+      },
+      {
+        "value": 875,
+        "color": "0xFE7903"
+      },
+      {
+        "value": 1155,
+        "color": "0xF8F400"
+      },
+      {
+        "value": 1470,
+        "color": "0x60FF00"
+      },
+      {
+        "value": 1740,
+        "color": "0x02C9B3"
+      },
+      {
+        "value": 9999,
+        "color": "0xD042F3"
+      }
+    ]
+  },
+  "alpha": {
+    "rating": [
+      {
+        "value": 49,
+        "alpha": 100
+      },
+      {
+        "value": 53,
+        "alpha": 100
+      },
+      {
+        "value": 101,
+        "alpha": 100
+      }
+    ],
+    "kb": [
+      {
+        "value": 2,
+        "alpha": 100
+      },
+      {
+        "value": 10,
+        "alpha": 100
+      },
+      {
+        "value": 999,
+        "alpha": 100
+      }
+    ],
+    "eff": [
+      {
+        "value": 900,
+        "alpha": 100
+      },
+      {
+        "value": 1200,
+        "alpha": 100
+      },
+      {
+        "value": 9999,
+        "alpha": 100
+      }
+    ],
+    "hp": [
+      {
+        "value": 350,
+        "alpha": 100
+      },
+      {
+        "value": 500,
+        "alpha": 50
+      },
+      {
+        "value": 9999,
+        "alpha": 0
+      }
+    ],
+    "hp_ratio": [
+      {
+        "value": 10,
+        "alpha": 100
+      },
+      {
+        "value": 25,
+        "alpha": 80
+      },
+      {
+        "value": 50,
+        "alpha": 60
+      },
+      {
+        "value": 101,
+        "alpha": 40
+      }
+    ]
+  },
+  "consts": {
+    "MAX_EBN": 200,
+    "AVG_XVMSCALE": 30,
+    "AVG_GWR": 48,
+    "AVG_BATTLES": 2000
+  }
+}
