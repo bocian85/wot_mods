@@ -70,7 +70,7 @@
 		
 		<!-- taken damage history log -->
 		<damageLog visible="true">
-			<location x="240" y="33"/>
+			<location x="240" y="-600"/>
 			<text font="$TextFont" size="15" color="0xD2D2D2" align="left"/> 
 			<filter size="2" angle="45" distance="0" color="0x000000" alpha="100" strength="1.5"/>
 			<format>{{count}}:  {{dmg-one}} {{time-abs}}</format>
@@ -78,10 +78,10 @@
 		
 		<!-- big damage text display -->
 		<showDmg visible="true">
-			<location x="245" y="0" mode="1"/> <!-- mode - determins way of placement. 1 - coordinates are measured from the left edge, 2 - measured from center. -->
+			<location x="0" y="300" mode="2"/> <!-- mode - determins way of placement. 1 - coordinates are measured from the left edge, 2 - measured from center. -->
 			<text font="$TextFont" size="25" color="0xE2E2E2" align="left"/> 
 			<filter size="2" angle="0" distance="0" color="0xFF0000" alpha="100" strength="2.5"/>
-			<showTime>5</showTime> <!-- message decay time -->
+			<!--<showTime>5</showTime> <!-- message decay time -->
 			<format>{{dmg-one}}</format>
 		</showDmg>
 		
