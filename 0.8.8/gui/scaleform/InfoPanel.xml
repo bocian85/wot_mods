@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ip>
+
+	
+
+	
+
+	
+	<infoPanel>
+		
+		
+		<targetEnable>
+			<team>true</team> 
+			<enemy>true</enemy> 
+			<dead>false</dead> 
+		</targetEnable>
+		
+		
+		<arcade visible="true"> 
+			<location x="-250" y="250"/> 
+			<delay>10</delay> 
+		</arcade>
+		
+		
+		<sniper visible="true"> 
+			<location x="-250" y="250"/> 
+			<delay>10</delay> 
+		</sniper>
+		
+		
+		<strategic visible="true"> 
+			<location x="-250" y="250"/> 
+			<delay>10</delay> 
+		</strategic>
+		
+		
+		<postmortem visible="true"> 
+			<location x="-250" y="250"/> 
+			<delay>10</delay> 
+		</postmortem>
+		
+	</infoPanel>
+	
+	
+	<background alpha="0"> 
+		<location x="-85" y="-123"/> 
+		<scale x="85" y="127"/> 
+	</background>
+	
+	
+	<targetName visible="true"> 
+		<location x="-80" y="-120"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="300" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{target}}</format> 
+	</targetName>
+	
+	
+	<gunName visible="false"> 
+		<location x="-80" y="110"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="300" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{target-gun}}</format> 
+	</gunName>
+	
+	
+	<gunReload visible="true"> 
+		<location x="-80" y="-102"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{target-reload-10}} сек</format> 
+	</gunReload>
+	
+	
+	<visionRadius visible="true"> 
+		<location x="-80" y="0"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>Zasięg:{{t}}{{vision}} m</format> 
+	</visionRadius>
+	
+	
+	<turretArmorF visible="true"> 
+		<location x="-80" y="36"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>Kopułka:{{t}}{{turret-front}}{{t}}{{turret-side}}{{t}}{{turret-back}}</format> 
+	</turretArmorF>
+	
+	
+	<turretArmorS visible="false"> 
+		<location x="-55" y="0"/> 
+		<text font="Cuprum" size="15" color="0xFFFF00" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{turret-side}}</format> 
+	</turretArmorS>
+	
+	
+	<turretArmorB visible="false"> 
+		<location x="-30" y="0"/> 
+		<text font="Cuprum" size="15" color="0x00FF00" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{turret-back}}</format> 
+	</turretArmorB>
+	
+	
+	<hullArmorF visible="true"> 
+		<location x="-80" y="54"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>Kadłub:{{t}}{{hull-front}}{{t}}{{hull-side}}{{t}}{{hull-back}}</format> 
+	</hullArmorF>
+	
+	
+	<hullArmorS visible="false"> 
+		<location x="-105" y="85"/> 
+		<text font="Cuprum" size="15" color="0xFFFF00" alpha="100" align="right" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{hull-side}}</format> 
+	</hullArmorS>
+	
+	
+	<hullArmorB visible="false"> 
+		<location x="-80" y="85"/> 
+		<text font="Cuprum" size="15" color="0x00FF00" alpha="100" align="right" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{hull-back}}</format> 
+	</hullArmorB>
+	
+	
+	<shellType1 visible="true"> 
+		<location x="-80" y="72"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>Pociski:{{t}}{{t}}{{type-1}}{{t}}{{type-2}}{{t}}{{type-3}}</format> 
+	</shellType1>
+	
+	
+	<shellType2 visible="false"> 
+		<location x="-140" y="20"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{type-2}}</format> 
+	</shellType2>
+	
+	
+	<shellType3 visible="false"> 
+		<location x="-110" y="20"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{type-3}}</format> 
+	</shellType3>
+			
+	
+	<shellDamage1 visible="true"> 
+		<location x="-80" y="90"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>Obrażenia:{{t}}{{t}}{{damage-1}}{{t}}{{damage-2}}{{t}}{{damage-3}}</format> 
+	</shellDamage1>
+	
+	
+	<shellDamage2 visible="false"> 
+		<location x="-140" y="50"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{damage-2}}</format> 
+	</shellDamage2>
+	
+	
+	<shellDamage3 visible="false"> 
+		<location x="-110" y="40"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{damage-3}}</format> 
+	</shellDamage3>
+
+	
+	<shellPower1 visible="true"> 
+		<location x="-80" y="108"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>Penetracja:{{t}}{{power-1}}{{t}}{{power-2}}{{t}}{{power-3}}</format> 
+	</shellPower1>
+	
+	
+	<shellPower2 visible="false"> 
+		<location x="-140" y="60"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{power-2}}</format> 
+	</shellPower2>
+	
+	
+	<shellPower3 visible="false"> 
+		<location x="-110" y="60"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 
+		<format>{{power-3}}</format> 
+	</shellPower3>		
+
+	
+	<playerWeight visible="true"> 
+		<location x="-80" y="18"/> 
+		<text font="Cuprum" size="15" color="0xFF0000" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>   
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 			
+		<color poor="0xFFFF00" good="0x00FF00"/> 
+		<format>Waga:{{t}}{{weight}} t</format> 
+	</playerWeight>
+
+	
+	<targetWeight visible="false"> 
+		<location x="-100" y="-150"/> 
+		<text font="Cuprum" size="15" color="0xFF0000" alpha="100" align="left" bold="false" leading="0" width="160" height="500"/>   
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 			
+		<color poor="0xFFFF00" good="0x00FF00"/> 
+		<format>{{weight}} tn</format> 
+	</targetWeight>
+	
+	
+	<emptyField visible="false"> 
+		<location x="-100" y="-100"/> 
+		<text font="Cuprum" size="15" color="0xFFFFFF" alpha="100" align="left" bold="false" leading="0" width="160" height="35"/>   
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/> 			
+		<format></format> 
+	</emptyField>
+	
+	
+	<tankIcon visible="true" alpha="100"> 
+		<location x="-80" y="-100"/> 
+		<common large="true"/> 
+	</tankIcon>
+	
+	
+	<shellType>
+		<AP>AP</AP> 
+		<CR>CR</CR> 
+		<HC>HC</HC> 
+		<HE>HE</HE> 
+	</shellType>
+
+</ip>
