@@ -29,6 +29,22 @@
   // Версия редактора.
   "editorVersion": "0.57",
 
+  // Language used in mod
+  // "auto" - automatically detect language from game client,
+  // or specify file name located in res_mods/xvm/l10n/ (ex: "en")
+  // Используемый язык в моде
+  // "auto" - автоматически определять язык клиента игры,
+  // или укажите имя файла в папке res_mods/xvm/l10n/ (например, "en")
+  "language": "auto",
+
+  // Game Region
+  // "auto" - automatically detect game region from game client,
+  // or specify one of: "RU", "EU", "NA", "CN", "SEA", "VN", "KR"
+  // Регион (игровой кластер)
+  // "auto" - автоматически определять регион из клиента игры,
+  // или укажите один из: "RU", "EU", "NA", "CN", "SEA", "VN", "KR"
+  "region": "auto",
+
   // Common config options. All settings information in the mod not being used.
   // Общие параметры конфига. Все параметры информационные, в моде не используются.
   "definition": {
@@ -46,7 +62,7 @@
 
     // Config last modified.
     // Дата последней модификации конфига.
-    "date": "12.07.2013",
+    "date": "22.08.2013",
 
     // Supported version of the game.
     // Поддерживаемая версия игры.
@@ -54,16 +70,8 @@
 
     // The minimum required version of the XVM mod.
     // Минимально необходимая версия мода XVM.
-    "modMinVersion": "4.0.1"
+    "modMinVersion": "4.1.1"
   },
-
-  // Language used in mod
-  // "auto" - automatically detect language from game client,
-  // or specify file name located in res_mods/xvm/l10n/ (ex: "en")
-  // Используемый язык в моде
-  // "auto" - автоматически определять язык клиента игры,
-  // или укажите имя файла в папке res_mods/xvm/l10n/ (например, "en")
-  "language": "auto",
 
   // Parameters for login screen.
   // Параметры экрана логина.
@@ -84,7 +92,7 @@
   // Frag counter panel.
   // Панель счёта в бою.
   "fragCorrelation": ${"battle.xc":"fragCorrelation"},
-  
+
   // Ingame crits panel by "expert" skill.
   // Внутриигровая панель критов от навыка "экспет".
   "expertPanel": ${"battle.xc":"expertPanel"},

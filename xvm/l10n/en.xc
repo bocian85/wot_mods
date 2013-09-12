@@ -4,7 +4,7 @@
 {
   "locale": {
     // Author of translation
-    "XVM_translator": "kodos",
+    "XVM_translator": "XVM Team",
 
     // Win chance
     "Chance error": "Chance error",
@@ -18,19 +18,19 @@
     "ramming": "ramming",
     "world_collision": "falling",
     "Hits": "Hits",
-    "Total": "Damage",
-    "Last": "Tank",
+    "Total": "Total",
+    "Last": "Last",
 
     // Hp Left
-    "hpLeftTitle": "enemy in view range",
+    "hpLeftTitle": "Hitpoints left:",
 
     // Capture
-    "enemyBaseCapture": "Base Capture!  Capture Points",
-    "enemyBaseCaptured": "Victory!",
-    "allyBaseCapture": "Base under Attack!  Capture Points",
-    "allyBaseCaptured": "Defeat!",
+    "enemyBaseCapture": "Base capture by allies!",
+    "enemyBaseCaptured": "Base captured by allies!",
+    "allyBaseCapture": "Base capture by enemies!",
+    "allyBaseCaptured": "Base captured by enemies!",
     "Timeleft": "Timeleft",
-    "Capturers": "Tanks",
+    "Capturers": "Capturers",
 
     // FinalStatistics
     "Hit percent": "Hit percent",
@@ -52,12 +52,12 @@
     "EFF": "EFF",
     "updated": "updated",
     "unknown": "unknown",
-    "Avg level": "avg level",
-    "Spotted": "apotted",
-    "Defence": "defence",
-    "Capture": "capture",
+    "Avg level": "Avg level",
+    "Spotted": "Spotted",
+    "Defence": "Defence",
+    "Capture": "Capture",
     "player (average / top)": "player (average / top)",
-    "Spec dmg": "Damage/HP",
+    "Spec dmg": "Spec dmg",
 
     // UserInfo - filters
     "Filter": "Filter",
@@ -96,6 +96,6 @@
     "SPG": "SPG",
 
     // VehicleMarkersManager
-    "blownUp": "Blown-Up!"
+    "blownUp": "Blown-up!"
   }
 }

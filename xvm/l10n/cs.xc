@@ -4,7 +4,7 @@
 {
   "locale": {
     // Author of translation
-    "XVM_translator": "Assassik/kodos",
+    "XVM_translator": "Assassik",
 
     // Win chance
     "Chance error": "Chyba",
@@ -17,18 +17,18 @@
     "fire": "požár",
     "ramming": "náraz",
     "world_collision": "pádem",
-    "Hits": "Zásahy",
-    "Total": "Poškození",
-    "Last": "Tank",
+    "Hits": "Zásahů",
+    "Total": "Celkem",
+    "Last": "Poslední",
 
     // Hp Left
-    "hpLeftTitle": "Dohled nepřátel:",
+    "hpLeftTitle": "Zbývajicí HP:",
 
     // Capture
-    "enemyBaseCapture": "Obsazování nepřátelské základny! Body obsazení základny",
-    "enemyBaseCaptured": "Vítězství!",
-    "allyBaseCapture": "Obsazování spojenecké základny! Body obsazení základny",
-    "allyBaseCaptured": "Prohra!",
+    "enemyBaseCapture": "Obsazování nepřátelské základny!",
+    "enemyBaseCaptured": "Nepřátelská základna obsazena!",
+    "allyBaseCapture": "Obsazování spojenecké základny!",
+    "allyBaseCaptured": "Spojenecká základna obsazena!",
     "Timeleft": "Čas",
     "Capturers": "Vozidel",
 

@@ -1,19 +1,21 @@
 {
-  "configVersion": "4.0.0",
+  "configVersion": "5.0.0",
   "def": {
     //"standardMarkers": true,
     "standardMarkers": false,
 
-    "format":  "<font face='Consolas' size='11'>{{avglvl}} <font face='Symbol' color='#111111'><b><font color='{{c:tdv}}'>·</font><font color='{{c:tfb}}'>·</font><font color='{{c:tsb}}'>·</font></b></font> <font color='{{c:e}}'>{{e}}</font>|<font color='{{c:xeff}}'>{{xeff}}</font>|<font color='{{c:xwn}}'>{{xwn}}</font> <font color='{{c:kb}}'>{{kb:3}}</font> <font color='{{c:twr}}'>{{twr}}</font></font>",
+    "formatNick":  "{{name}}{{clan}}",
+    //"formatNick":  "<font color='#123456'>{{clan}}</font>{{name}}",
+    "formatVehicle":  "<font face='Consolas' size='11'><font color='{{c:avglvl}}'>{{avglvl}}</font> <font face='Symbol' color='#111111'><b><font color='{{c:tdv}}'>·</font><font color='{{c:tfb}}'>·</font><font color='{{c:tsb}}'>·</font></b></font> <font color='{{c:e}}'>{{e}}</font>|<font color='{{c:xeff}}'>{{xeff}}</font>|<font color='{{c:xwn}}'>{{xwn}}</font> <font color='{{c:kb}}'>{{kb:3}}</font></font>",
 
     "markersStat": "<b><font face='Symbol' color='#CCCCCC' size='11'><font color='{{c:t-battles}}'>·</font> <font color='{{c:e}}'>·</font> <font color='{{c:xeff}}'>·</font> <font color='{{c:xwn}}'>·</font></font></b>",
-    "markersStatAlt": "<b><font face='$FieldFont' size='12'><font color='{{c:t-battles}}'>{{t-hb}}</font> <font color='{{c:e}}'>{{teff}}</font> <font color='{{c:xeff}}'>{{xeff}}</font> <font color='{{c:xwn}}'>{{xwn}}</font> <font color='{{c:rating}}'>{{rating}}</font> <font color='{{c:twr}}'>{{twr}}</font></font></b>",
+    "markersStatAlt": "<b><font face='$FieldFont' size='12'><font color='{{c:t-battles}}'>{{t-hb}}</font> <font color='{{c:e}}'>{{teff}}</font> <font color='{{c:xeff}}'>{{xeff}}</font> <font color='{{c:xwn}}'>{{xwn}}</font> <font color='{{c:rating}}'>{{rating}}</font></font></b>",
 
     "damageMessageAlive": "{{dmg}}",
     "damageMessageAllyDead": "({{dmg}})",
     "damageMessageEnemyDead": "<textformat leading='-5'>({{dmg}})<br>{{vehicle}}</textformat>",
 
-    "pingServers": { "enabled": true },
+    "pingServers": { "enabled": true, "updateInterval": 5000 },
 
     "markers": {
       "vehicleIconColor": null,
@@ -90,15 +92,19 @@
     "showChancesExp": true,
     "removeSquadIcon": false,
     "clanIcon": { "show": true, "x": 4, "y": 6, "h": 16, "w": 16, "alpha": 90 },
-    "formatLeft":  ${"def.format"},
-    "formatRight": ${"def.format"}
+    "formatLeftNick":  ${"def.formatNick"},
+    "formatRightNick":  ${"def.formatNick"},
+    "formatLeftVehicle":  ${"def.formatVehicle"},
+    "formatRightVehicle": ${"def.formatVehicle"}
   },
   "statisticForm": {
     "showChances": true,
     "showChancesExp": true,
     "clanIcon": { "show": true, "x": 4, "y": 6, "h": 16, "w": 16, "alpha": 90 },
-    "formatLeft":  ${"def.format"},
-    "formatRight": ${"def.format"}
+    "formatLeftNick":  ${"def.formatNick"},
+    "formatRightNick":  ${"def.formatNick"},
+    "formatLeftVehicle":  ${"def.formatVehicle"},
+    "formatRightVehicle": ${"def.formatVehicle"}
   },
   "playersPanel": {
     "alpha": 50,

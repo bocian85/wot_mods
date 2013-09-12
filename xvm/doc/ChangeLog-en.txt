@@ -1,4 +1,46 @@
-﻿XVM-4.1.0:
+﻿XVM-5.0.0-test1:
+  * adaptation to WoT 0.8.8
+
+  [NEW FUNCTIONS]
+  * possibility of editing nickname field in battleloading, Tab:
+    formatLeftNick, formatRightNick
+  * localization: added Danish, Italian and Turkish languages
+  * localization: added Polish readme
+
+  [MACROS]
+  * added macros {{c:avglvl}}, {{a:avglvl}}
+
+  [FIXES]
+  * fixed "sixth sense" icon wrong positioning
+
+  [OTHER]
+  * new platform - AS3+Python
+  * xvm-stat, Dokan and .NET Framework is not required now. Please, delete xvm-stat.exe.
+  * config version increased to 5.0.0
+  * statistic is disabled in the config by default
+  * removed TWR rating
+  * removed option login/showPingOnGameLoading
+  * changed clock format in battleloading (http://php.net/date)
+
+XVM-4.1.1:
+  [NEW FUNCTIONS]
+  * localization: added Finnish, French, German, Hungarian, Korean, Polish, Spanish and Vietnamese translations
+  * localization: macros for translating text in config, removed language dependency from config
+  * hitlog: rows in HP Left panel can be formatted
+  * xvm-stat: /priority parameter
+  * minimap: support vehicle names from vehicleNames.xc
+  * minimap: short vehicle names from vehicleNames.xc
+
+  [FIXES]
+  * minimap: fixed labels for asian region
+  * stock\top turret marker: removed incorrect markers at some SPGs
+  * squad window: fixed missing info for some vehicles
+  * squad window: text field with vehicle tier no longer creates artefacts
+
+  [OTHER]
+  * automation: XVM nightly builds http://wargaming.by-reservation.com/xvm/
+
+XVM-4.1.0:
   [NEW FUNCTIONS]
   * new options:
     login/pingServers/showPingOnGameLoading - show ping during game loading, before login screen
@@ -12,7 +54,7 @@
     hangar/widgetsEnabled - enable hangar widgets. Currently, only clock is available.
   * minimap: new label types - wrecks, teamkillers, lost allies
   * localization: XVM now using external files for translation
-  * localization: new belarusian, ukranian and czech translations
+  * localization: added Belarusian, Ukranian and Czech translations
   * snippets - extended battle elements settings. battle/elements section was changed.
     details is here: http://www.koreanrandom.com/forum/topic/1761-snippets/ (Russian)
     xvm-stat 1.6.1 or higher required
@@ -46,7 +88,7 @@ XVM-4.0.0:
   * expertPanel mod; see battle.xc
   * cluster responce time table at login and hangar (ping);
     "pingServers" section at login.xc and  hangar.xc config files
-  * hitlog: shows enemy HP left (markers which were visible) on Alt press; 
+  * hitlog: shows enemy HP left (markers which were visible) on Alt press;
     hitlog.xc: "hpLeft": "true"
   * show ping at the game loading screen; login.xc/pingServers
 

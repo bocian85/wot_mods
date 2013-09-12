@@ -2,34 +2,21 @@
   <dynamicCameraCommon>
     <caliberImpulses>
       <range>0 0.0</range>
-      <range>20 0.0</range>
-      <range>30 0.0</range>
-      <range>50 0.0</range>
-      <range>60 0.0</range>
-      <range>70 0.0</range>
-      <range>84 0.0</range>
-      <range>99 0.0</range>
-      <range>104 0.0</range>
-      <range>115 0.0</range>
-      <range>128 0.0</range>
-      <range>145 0.0</range>
-      <range>200 0.0</range>
-      <range>300 0.0</range>
     </caliberImpulses>
     <massSensitivity>
-      <range>0 0.0</range>
-      <range>15 0.0</range>
-      <range>20 0.0</range>
-      <range>30 0.0</range>
-      <range>46 0.0</range>
-      <range>60 0.0</range>
-      <range>80 0.0</range>
-      <range>105 0.0</range>
-      <range>120 0.0</range>
-      <range>140 0.0</range>
+      <range>0 1.3</range>
+      <range>15 1.0</range>
+      <range>20 0.8</range>
+      <range>30 0.6</range>
+      <range>46 0.57</range>
+      <range>60 0.55</range>
+      <range>80 0.5</range>
+      <range>105 0.45</range>
+      <range>120 0.4</range>
+      <range>140 0.3</range>
     </massSensitivity>
-    <collisionSpeedToImpulseRatio>0.0</collisionSpeedToImpulseRatio>
-    <minCollisionSpeed>0.0</minCollisionSpeed>
+    <collisionSpeedToImpulseRatio>0.1</collisionSpeedToImpulseRatio>
+    <minCollisionSpeed>90</minCollisionSpeed>
     <zeroDamageHitSensitivity>0.0</zeroDamageHitSensitivity>
   </dynamicCameraCommon>
   <postMortemMode>
@@ -41,22 +28,22 @@
       <distRange>2 250</distRange>
       <dynamics>
         <impulseOscillator>
-          <mass>0.0</mass>
-          <stiffness>0.0 0.0 0.0</stiffness>
-          <drag>0.0 0.0 0.0</drag>
-          <constraints>0.0 0.0 0.0</constraints>
+          <mass>1.0</mass>
+          <stiffness>90.0 90.0 90.0</stiffness>
+          <drag>12.0 12.0 12.0</drag>
+          <constraints>10.0 0.0 10.0</constraints>
         </impulseOscillator>
         <movementOscillator>
-          <mass>0.0</mass>
-          <stiffness>0.0 0.0 0.0</stiffness>
-          <drag>0.0 0.0 0.0</drag>
-          <constraints>0.0 0.0 0.0</constraints>
+          <mass>1.2</mass>
+          <stiffness>25.0 25.0 25.0</stiffness>
+          <drag>10.0 10.0 10.0</drag>
+          <constraints>40.0 40.0 40.0</constraints>
         </movementOscillator>
         <randomNoiseOscillatorSpherical>
-          <mass>0.0</mass>
-          <stiffness>0.0</stiffness>
-          <drag>0.0</drag>
-          <scaleCoeff>0.0 0.0 0.0</scaleCoeff>
+          <mass>0.7</mass>
+          <stiffness>8600.0</stiffness>
+          <drag>33.0</drag>
+          <scaleCoeff>1.0 1.0 0.4</scaleCoeff>
         </randomNoiseOscillatorSpherical>
         <impulseSensitivities>
           <shot>0.0</shot>
@@ -77,15 +64,15 @@
         </impulseLimits>
         <noiseLimits>
         </noiseLimits>
-        <accelerationSensitivity>0.0</accelerationSensitivity>
-        <frontImpulseToPitchRatio>0.0</frontImpulseToPitchRatio>
-        <sideImpulseToRollRatio>0.0</sideImpulseToRollRatio>
-        <sideImpulseToYawRatio>0.0</sideImpulseToYawRatio>
-        <accelerationThreshold>0.0</accelerationThreshold>
-        <accelerationMax>0.0</accelerationMax>
-        <maxShotImpulseDistance>0.0</maxShotImpulseDistance>
-        <maxExplosionImpulseDistance>0.0</maxExplosionImpulseDistance>
-        <zoomExposure>0.0</zoomExposure>
+        <accelerationSensitivity>3.0</accelerationSensitivity>
+        <frontImpulseToPitchRatio>7.0</frontImpulseToPitchRatio>
+        <sideImpulseToRollRatio>2.0</sideImpulseToRollRatio>
+        <sideImpulseToYawRatio>10.0</sideImpulseToYawRatio>
+        <accelerationThreshold>1.5</accelerationThreshold>
+        <accelerationMax>15.0</accelerationMax>
+        <maxShotImpulseDistance>35.0</maxShotImpulseDistance>
+        <maxExplosionImpulseDistance>45.0</maxExplosionImpulseDistance>
+        <zoomExposure>0.33</zoomExposure>
       </dynamics>
     </camera>
   </postMortemMode>
@@ -97,27 +84,27 @@
       <sensitivity>0.0025</sensitivity>
       <scrollSensitivity>	5	</scrollSensitivity>
       <angleRange>10 110</angleRange>
-      <distRange>2 150</distRange> <!-- drugi numer odpowiada oddaleniu kamery w metrach dla normalnego trybu widoku -->
+      <distRange>2 250</distRange>
       <minStartDist>	15	</minStartDist>
       <optimalStartDist>	20	</optimalStartDist>
       <dynamics>
         <impulseOscillator>
-          <mass>0.0</mass>
-          <stiffness>0.0 0.0 0.0</stiffness>
-          <drag>0.0 0.0 0.0</drag>
-          <constraints>0.0 0.0 0.0</constraints>
+          <mass>1.0</mass>
+          <stiffness>90.0 90.0 90.0</stiffness>
+          <drag>12.0 12.0 12.0</drag>
+          <constraints>10.0 0.0 10.0</constraints>
         </impulseOscillator>
         <movementOscillator>
-          <mass>0.0</mass>
-          <stiffness>0.0 0.0 0.0</stiffness>
-          <drag>0.0 0.0 0.0</drag>
-          <constraints>0.0 0.0 0.0</constraints>
+          <mass>1.2</mass>
+          <stiffness>125.0 125.0 125.0</stiffness>
+          <drag>19.0 19.0 19.0</drag>
+          <constraints>40.0 40.0 40.0</constraints>
         </movementOscillator>
         <randomNoiseOscillatorSpherical>
-          <mass>0.0</mass>
-          <stiffness>0.0</stiffness>
-          <drag>0.0</drag>
-          <scaleCoeff>0.0 0.0 0.0</scaleCoeff>
+          <mass>0.7</mass>
+          <stiffness>8600.0</stiffness>
+          <drag>33.0</drag>
+          <scaleCoeff>1.0 1.0 0.4</scaleCoeff>
         </randomNoiseOscillatorSpherical>
         <impulseSensitivities>
           <shot>0.0</shot>
@@ -138,15 +125,15 @@
         </impulseLimits>
         <noiseLimits>
         </noiseLimits>
-        <accelerationSensitivity>0.0</accelerationSensitivity>
-        <frontImpulseToPitchRatio>0.0</frontImpulseToPitchRatio>
-        <sideImpulseToRollRatio>0.0</sideImpulseToRollRatio>
-        <sideImpulseToYawRatio>0.0</sideImpulseToYawRatio>
-        <accelerationThreshold>0.0</accelerationThreshold>
-        <accelerationMax>0.0</accelerationMax>
-        <maxShotImpulseDistance>0.0</maxShotImpulseDistance>
-        <maxExplosionImpulseDistance>0.0</maxExplosionImpulseDistance>
-        <zoomExposure>0.0</zoomExposure>
+        <accelerationSensitivity>3.0</accelerationSensitivity>
+        <frontImpulseToPitchRatio>7.0</frontImpulseToPitchRatio>
+        <sideImpulseToRollRatio>2.0</sideImpulseToRollRatio>
+        <sideImpulseToYawRatio>10.0</sideImpulseToYawRatio>
+        <accelerationThreshold>1.5</accelerationThreshold>
+        <accelerationMax>15.0</accelerationMax>
+        <maxShotImpulseDistance>35.0</maxShotImpulseDistance>
+        <maxExplosionImpulseDistance>45.0</maxExplosionImpulseDistance>
+        <zoomExposure>0.33</zoomExposure>
       </dynamics>
     </camera>
   </arcadeMode>
@@ -156,18 +143,18 @@
       <keySensitivity>0.5</keySensitivity>
       <sensitivity>0.05</sensitivity>
       <scrollSensitivity>0.25</scrollSensitivity>
-      <distRange>4 180</distRange> <!-- drugi numer odpowiada oddaleniu kamery w metrach dla trybu widoku artylerii -->
+      <distRange>40 100</distRange>
       <dynamics>
         <oscillator>
-          <mass>0.0</mass>
-          <stiffness>0.0 0.0 0.0</stiffness>
-          <drag>0.0 0.0 0.0</drag>
-          <constraints>0.0 0.0 0.0</constraints>
+          <mass>1.5</mass>
+          <stiffness>90.0 90.0 90.0</stiffness>
+          <drag>12.0 12.0 12.0</drag>
+          <constraints>10.0 10.0 30.0</constraints>
         </oscillator>
         <randomNoiseOscillatorFlat>
-          <mass>0.0</mass>
-          <stiffness>0.0</stiffness>
-          <drag>0.0</drag>
+          <mass>1.0</mass>
+          <stiffness>8600.0</stiffness>
+          <drag>33.0</drag>
         </randomNoiseOscillatorFlat>
         <impulseSensitivities>
           <hit>0.0</hit>
@@ -201,22 +188,22 @@
       <zooms>2 4 8</zooms>
       <dynamics>
         <impulseOscillator>
-          <mass>0.0</mass>
-          <stiffness>0.0 0.0 0.0</stiffness>
-          <drag>0.0 0.0 0.0</drag>
-          <constraints>0.0 0.0 0.0</constraints>
+          <mass>1.5</mass>
+          <stiffness>90.0 90.0 90.0</stiffness>
+          <drag>12.0 12.0 12.0</drag>
+          <constraints>10.0 10.0 10.0</constraints>
         </impulseOscillator>
         <movementOscillator>
-          <mass>0.0</mass>
-          <stiffness>0.0 0.0 0.0</stiffness>
-          <drag>0.0 0.0 0.0</drag>
-          <constraints>0.0 0.0 0.0</constraints>
+          <mass>1.0</mass>
+          <stiffness>25.0 25.0 25.0</stiffness>
+          <drag>5.0 5.0 5.0</drag>
+          <constraints>50.0 50.0 50.0</constraints>
         </movementOscillator>
         <randomNoiseOscillatorSpherical>
-          <mass>0.0</mass>
-          <stiffness>0.0</stiffness>
-          <drag>0.0</drag>
-          <scaleCoeff>0.0 0.0 0.0</scaleCoeff>
+          <mass>0.8</mass>
+          <stiffness>8600.0</stiffness>
+          <drag>33.0</drag>
+          <scaleCoeff>1.0 1.0 1.0</scaleCoeff>
         </randomNoiseOscillatorSpherical>
         <impulseSensitivities>
           <shot>0.0</shot>
@@ -241,15 +228,15 @@
           <shot>0.0 0.0</shot>
           <hit>0.0 0.0</hit>
         </noiseLimits>
-        <accelerationSensitivity>0.0 0.0 0.0</accelerationSensitivity>
-        <accelerationThreshold>0.0</accelerationThreshold>
-        <accelerationMax>0.0</accelerationMax>
-        <maxShotImpulseDistance>0.0</maxShotImpulseDistance>
-        <maxExplosionImpulseDistance>0.0</maxExplosionImpulseDistance>
-        <impulsePartToRoll>0.0</impulsePartToRoll>
+        <accelerationSensitivity>0.2 0.4 0.2</accelerationSensitivity>
+        <accelerationThreshold>2.0</accelerationThreshold>
+        <accelerationMax>6.0</accelerationMax>
+        <maxShotImpulseDistance>25.0</maxShotImpulseDistance>
+        <maxExplosionImpulseDistance>35.0</maxExplosionImpulseDistance>
+        <impulsePartToRoll>0.5</impulsePartToRoll>
         <pivotShift>0.0</pivotShift>
-        <aimMarkerDistance>10.0</aimMarkerDistance>
-        <zoomExposure>0.0 0.0 0.0</zoomExposure>
+        <aimMarkerDistance>1.0</aimMarkerDistance>
+        <zoomExposure>0.6 0.5 0.4</zoomExposure>
       </dynamics>
     </camera>
   </sniperMode>

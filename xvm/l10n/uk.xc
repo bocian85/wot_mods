@@ -3,7 +3,8 @@
  */
 {
   "locale": {
-    "XVM_translator": "RedMor, <contact@by-reservation.com>",
+    // Author of translation
+    "XVM_translator": "RedMor <contact@by-reservation.com>, Vlad VirusX",
 
     // Win chance
     "Chance error": "Помилка розрахунку шансів",
@@ -16,13 +17,20 @@
     "fire": "пожежа",
     "ramming": "таран",
     "world_collision": "падіння",
+    "Hits": "Пробито",
+    "Total": "Всього",
+    "Last": "Останній",
+
+    // Hp Left
+    "hpLeftTitle": "Залишилося HP:",
 
     // Capture
-    "<font size='15' color='#FFFFFF'>Enemy base capture! {{extra}}</font>": "<font size='15' color='#FFFFFF'>Захоплення ворожої бази! {{extra}}</font>",
-    "<font size='17' color='#FFCC66'>Enemy base captured!</font>": "<font size='17' color='#FFCC66'>Ворожа база захоплена!</font>",
-    "<font size='15' color='#FFFFFF'>Ally base capture! {{extra}}</font>": "<font size='15' color='#FFFFFF'>Захоплення нашої бази! {{extra}}</font>",
-    "<font size='17' color='#FFCC66'>Ally base captured!</font>": "<font size='17' color='#FFCC66'>Наша база захоплена!</font>",
-    "Capturers: <b><font color='#FFCC66'>{{tanks}}</font></b> Timeleft: <b><font color='#FFCC66'>{{time}}</font><b>": "Загарбників: <b><font color='#FFCC66'>{{tanks}}</font></b> Залишилось: <b><font color='#FFCC66'>{{time}}</font><b>",
+    "enemyBaseCapture": "Захоплення ворожої бази!",
+    "enemyBaseCaptured": "Ворожа база захоплена!",
+    "allyBaseCapture": "Захоплення нашої бази!",
+    "allyBaseCaptured": "Наша база захоплена!",
+    "Timeleft": "Залишилось",
+    "Capturers": "Загарбників",
 
     // FinalStatistics
     "Hit percent": "Відсоток влучень",
@@ -38,7 +46,7 @@
     "disabled": "вимкнено",
 
     // UserInfo
-    "UserInfoEHint": "Ефективність на танку.\nЗначення вказано на момент останнього оновлення статистики: %DATE%\nАктуальне значення на поточний момент - в детальній інформації за технікою.\nПравильність значень у колонці залежить від якості отриманих вихідних даних.",
+    "UserInfoEHint": "Ефективність на танку.\nЗначення вказано на момент останнього оновлення статистики: \u0025DATE\u0025\nАктуальне значення на поточний момент - в детальній інформації за технікою.\nПравильність значень у колонці залежить від якості отриманих вихідних даних.",
     "Data was updated at": "Дані були оновлені",
     " to ": " до ",
     "EFF": "РЕ",
@@ -85,6 +93,9 @@
     "MT": "СТ",
     "LT": "ЛТ",
     "TD": "ПТ",
-    "SPG": "САУ"
+    "SPG": "САУ",
+
+    // VehicleMarkersManager
+    "blownUp": "Вибух БК!"
   }
 }

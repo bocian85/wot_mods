@@ -4,7 +4,7 @@
 {
   "locale": {
     // Author of translation
-    "XVM_translator": "Alexander Shoumsky/kodos",
+    "XVM_translator": "Alexander Shoumsky, <contact@by-reservation.com>",
 
     // Win chance
     "Chance error": "Не ўдалося разлічыць шанцы",
@@ -17,18 +17,18 @@
     "fire": "пажар",
     "ramming": "таран",
     "world_collision": "падзенне",
-    "Hits": "Попадании",
-    "Total": "повреждение",
-    "Last": "Tанк",
+    "Hits": "Прабіцці",
+    "Total": "Агулам",
+    "Last": "Апошняе",
 
     // Hp Left
-    "hpLeftTitle": "Враг в учетном диапазона:",
+    "hpLeftTitle": "Засталося HP:",
 
     // Capture
-    "enemyBaseCapture": "Захоп варожай базы! Очков захвата",
-    "enemyBaseCaptured": "Победа!",
-    "allyBaseCapture": "Захоп нашай базы! Очков захвата",
-    "allyBaseCaptured": "Поражение!",
+    "enemyBaseCapture": "Захоп варожай базы!",
+    "enemyBaseCaptured": "Варожая база захоплена!",
+    "allyBaseCapture": "Захоп нашай базы!",
+    "allyBaseCaptured": "Нашую базу захапілі!",
     "Timeleft": "Засталося часу",
     "Capturers": "Захопнікаў"
 

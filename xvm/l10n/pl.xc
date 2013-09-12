@@ -17,18 +17,18 @@
     "fire": "pożar",
     "ramming": "taranowanie",
     "world_collision": "upadek",
-    "Hits": "Trafienia",
-    "Total": "Obrażenia",
-    "Last": "Czołg",
+    "Hits": "Hits",
+    "Total": "Total",
+    "Last": "Last",
 
     // Hp Left
-    "hpLeftTitle": "Wróg w zasięgu widzenia",
+    "hpLeftTitle": "Hitpoints left:",
 
     // Capture
-    "enemyBaseCapture": "Opanowanie bazy przeciwnika! Punkty przejmowania ",
-    "enemyBaseCaptured": "Wygrana!",
-    "allyBaseCapture": "Okupacja naszej bazy! Punkty przejmowania ",
-    "allyBaseCaptured": "Przegrana!",
+    "enemyBaseCapture": "Opanowanie bazy przeciwnika!",
+    "enemyBaseCaptured": "Baza przeciwnika opanowana!",
+    "allyBaseCapture": "Okupacja naszej bazy!",
+    "allyBaseCaptured": "Zdobyto naszą bazę!",
     "Timeleft": "Pozostało",
     "Capturers": "Okupantów",
 

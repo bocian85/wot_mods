@@ -4,7 +4,7 @@
 {
   "locale": {
     // Author of translation
-    "XVM_translator": "RKPhantom/kodos",
+    "XVM_translator": "RKPhantom",
 
     // Win chance
     "Chance error": "Probabilidad de error",
@@ -18,17 +18,17 @@
     "ramming": "choque",
     "world_collision": "caida",
     "Hits": "Impactos",
-    "Total": "Daño",
-    "Last": "Tanque",
+    "Total": "Total",
+    "Last": "Ultimo",
 
     // Hp Left
-    "hpLeftTitle": "Enemigo en rango de visión:",
+    "hpLeftTitle": "Puntos de Impacto Restante:",
 
     // Capture
-    "enemyBaseCapture": "Capturando base enemiga! Puntos de captura",
-    "enemyBaseCaptured": "Victoria!",
-    "allyBaseCapture": "Estan capturando la base aliada! Puntos de captura",
-    "allyBaseCaptured": "Derrota!",
+    "enemyBaseCapture": "Capturando base enemiga!",
+    "enemyBaseCaptured": "Base enemiga capturada!",
+    "allyBaseCapture": "Estan capturando la base aliada!",
+    "allyBaseCaptured": "Base aliada capturada!",
     "Timeleft": "Tiempo restante",
     "Capturers": "Capturando",
 

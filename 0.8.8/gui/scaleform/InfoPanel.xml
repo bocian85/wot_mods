@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ip>
 
-	
-
-	
-
-	
 	<infoPanel>
 		
 		
@@ -226,11 +221,7 @@
 	</emptyField>
 	
 	
-	<tankIcon visible="true" alpha="100"> 
-		<location x="-80" y="-100"/> 
-		<common large="true"/> 
-	</tankIcon>
-	
+
 	
 	<shellType>
 		<AP>AP</AP> 

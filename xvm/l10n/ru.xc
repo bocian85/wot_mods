@@ -4,7 +4,7 @@
 {
   "locale": {
     // Author of translation
-    "XVM_translator": "Maxim Schedriviy/kodos",
+    "XVM_translator": "XVM Team",
 
     // Win chance
     "Chance error": "Ошибка расчета шансов",
@@ -17,18 +17,18 @@
     "fire": "пожар",
     "ramming": "таран",
     "world_collision": "падение",
-    "Hits": "Попадании",
-    "Total": "повреждение",
-    "Last": "Tанк",
+    "Hits": "Пробитий",
+    "Total": "Всего",
+    "Last": "Последний",
 
     // Hp Left
-    "hpLeftTitle": "Враг в учетном диапазона:",
+    "hpLeftTitle": "Осталось HP:",
 
     // Capture
-    "enemyBaseCapture": "Захват вражеской базы! Очков захвата",
-    "enemyBaseCaptured": "Победа!",
-    "allyBaseCapture": "Захват нашей базы! Очков захвата",
-    "allyBaseCaptured": "Поражение!",
+    "enemyBaseCapture": "Захват базы союзниками!",
+    "enemyBaseCaptured": "База захвачена союзниками!",
+    "allyBaseCapture": "Захват базы врагами!",
+    "allyBaseCaptured": "База захвачена врагами!",
     "Timeleft": "Осталось",
     "Capturers": "Захватчиков",
 

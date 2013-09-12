@@ -1,100 +1,101 @@
 ﻿/**
- * Deutsche Übersetung.
+ * German translation file.
  */
 {
   "locale": {
-    "XVM_translator": "kodos",
+    // Author of translation
+    "XVM_translator": "diclovit",
 
     // Win chance
-    "Chance error": "Fehlerchance",
-    "Chance to win": "Siegeschance",
-    "global": "global",
+    "Chance error": "Fehler bei Berechnung der Siegchance",
+    "Chance to win": "Siegchance",
+    "global": "Global",
     "per-vehicle": "pro Fahrzeug",
 
     // Hitlog
-    "attack": "angriff",
-    "fire": "feuer",
-    "ramming": "rammen",
-    "world_collision": "gefallen",
+    "attack": "Angriff",
+    "fire": "Feuer",
+    "ramming": "Rammen",
+    "world_collision": "Aufprall",
     "Hits": "Treffer",
-    "Total": "Schaden",
-    "Last": "Panzer",
+    "Total": "Gesamt",
+    "Last": "Zuletzt",
 
     // Hp Left
-    "hpLeftTitle": "Gegner im Sichtbereich",
+    "hpLeftTitle": "Verbleibende Trefferpunkte:",
 
     // Capture
-    "enemyBaseCapture": "Basis wird erobert!  Eroberungspunkte",
-    "enemyBaseCaptured": "Sieg!",
-    "allyBaseCapture": "Basis wird angegriffen!  Eroberungspunkte",
-    "allyBaseCaptured": "Niederlage!",
-    "Timeleft": "Zeit",
+    "enemyBaseCapture": "Feindliche Basis wird erobert!",
+    "enemyBaseCaptured": "Feindliche Basis wurde erobert!",
+    "allyBaseCapture": "Eigene Basis wird eingenommen!",
+    "allyBaseCaptured": "Eigene Basis verloren!",
+    "Timeleft": "Verbleibende Zeit",
     "Capturers": "Panzer",
 
     // FinalStatistics
     "Hit percent": "Treffergenauigkeit",
-    "Damage upon detecting": "Schaden durch Aufklärung",
+    "Damage upon detecting": "Schaden durch eigene Aufklärung/Kettenabschuss",
     "Damage dealt": "Schaden verursacht",
 
     // TeamRenderers
-    "TeamRenderersHeaderTip": "XWN (oder XEFF) Wertung.\nFür genauere Informationen fahre mit der Maus über einen Spielernamen.",
+    "TeamRenderersHeaderTip": "XWN (oder XEFF) Wertung.\nFür genauere Informationen fahre mit der Maus über den Spielernamen.",
     "Friend": "Freund",
-    "Ignored": "ignoriert",
-    "Load statistics": "lade Statistik",
+    "Ignored": "Ignoriert",
+    "Load statistics": "Lade Statistiken",
     "enabled": "aktiviert",
     "disabled": "deaktiviert",
 
     // UserInfo
-    "UserInfoEHint": "Wertung pro Fahrzeug.\nDie Werte entsprechen dem letzten Update am: \u0025DATE\u0025\nAktuelle Werte werden bei den einzelnen Fahrzeugen angezeigt.\nGenauigkeit abhängig von der Qualität der von Wargaming gelieferten Daten.",
-    "Data was updated at": "aktualisiert am",
-    " to ": " bis ",
+    "UserInfoEHint": "Wertung pro Fahrzeug.\nDie Werte entsprechen der letzten Aktualisierung am: \u0025DATE\u0025\nAktuelle Werte werden bei den einzelnen Fahrzeugen angezeigt.\nGenauigkeit abhängig von der Qualität der zur Verfügung stehenden Daten.",
+    "Data was updated at": "Daten aktualisiert am",
+    " to ": " zu ",
     "EFF": "EFF",
     "updated": "aktualisiert",
     "unknown": "unbekannt",
-    "Avg level": "Durschnittslevel",
-    "Spotted": "aufgeklärt",
-    "Defence": "verteidigt",
-    "Capture": "erobert",
-    "player (average / top)": "Spieler (Schnitt / Max.)",
-    "Spec dmg": "Schaden/HP",
+    "Avg level": "Ø Stufe",
+    "Spotted": "Aufgedeckt",
+    "Defence": "Verteidigung",
+    "Capture": "Eroberung",
+    "player (average / top)": "Spieler (Ø / Bestwert)",
+    "Spec dmg": "Spez. Schaden",
 
     // UserInfo - filters
     "Filter": "Filter",
-    "All tanks": "alle Fahrzeuge",
-    "Show all tanks in the game": "alle Fahrzeuge im Spiel",
-    "Player tanks": "eigene Fahrzeuge",
-    "Show all tanks played": "alle je gespielten Fahrzeuge",
-    "In hangar": "in Garage",
-    "Show only tanks in own hangar": "alle Fahrzeuge die sich aktuell in der Garage befinden",
+    "All tanks": "Alle Fahrzeuge",
+    "Show all tanks in the game": "Zeige alle Fahrzeuge",
+    "Player tanks": "Gefahrene",
+    "Show all tanks played": "Zeige alle gefahrenen Farzeuge",
+    "In hangar": "Garage",
+    "Show only tanks in own hangar": "Zeige nur die Fahrzeuge in der Garage",
 
     // UserInfo - buttons
-    "Level": "Level",
-    "Type": "Typ",
+    "Level": "Stufe",
+    "Type": "Art",
     "Nation": "Nation",
     "Name": "Name",
     "Fights": "Gefechte",
     "Wins": "Siege",
 
     // Crew
-    "PutOwnCrew": "Eigene Besatzung",
-    "PutBestCrew": "Beste Besatzung",
+    "PutOwnCrew": "Eingewiesene Besatzung einsetzen",
+    "PutBestCrew": "Beste Besatzung einsetzen",
 
     // Squad
     "Vehicle": "Fahrzeug",
-    "Battle tiers": "Gefechtslevel",
+    "Battle tiers": "Gefechtsstufen",
     "ussr": "UdSSR",
     "germany": "Deutschland",
     "usa": "USA",
     "france": "Frankreich",
-    "uk": "UK",
+    "uk": "Großbritannien",
     "china": "China",
-    "HT": "HT",
-    "MT": "MT",
-    "LT": "LT",
-    "TD": "TD",
-    "SPG": "SPG",
+    "HT": "SP",
+    "MT": "MP",
+    "LT": "LP",
+    "TD": "JP",
+    "SPG": "SFL",
 
     // VehicleMarkersManager
-    "blownUp": "Blown-Up!"
+    "blownUp": "Munitionsexplosion!"
   }
 }

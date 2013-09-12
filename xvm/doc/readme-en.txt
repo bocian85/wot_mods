@@ -59,6 +59,9 @@
     change the value of the variable "language" from "auto" to the language code.
     The language code must match the name of the file in the \res_mods\xvm\l10n\ (for example, "en").
 
+  4. There is possibility to install nightly builds of XVM.
+    You can download nightly builds on http://wargaming.by-reservation.com/xvm/
+
 -----------------------------------------------------------
 3. UPDATE
 -----------------------------------------------------------
@@ -81,7 +84,7 @@
   All possible config options you can see in this file:
     \res_mods\xvm\configs\@Default\
 
-    
+
   Supported HTML tags:
     http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/text/TextField.html#htmlText
 
@@ -126,6 +129,7 @@
       {{c:system}}    - system color (disable override color)
       {{a:hp}}        - transparency depended from current health points (only in vehicle markers)
       {{a:hp-ratio}}  - transparency depended from current health ratio (only in vehicle markers)
+      {{l10n:blownUp}}  - localizated text "Blown-up!", only in "blowupMessage"
       + statistics macros (see below)
 
     In Hits Log:
@@ -148,6 +152,27 @@
       {{dmg-kind}}    - damage kind (attack, fire, ramming, ...)
       {{c:dmg-kind}}  - color depended from damage kind
       {{c:vtype}}     - color depended from vehicle type
+      {{l10n:Hits}}   - localizated text "Hits"
+      {{l10n:Total}}  - localizated text "Total"
+      {{l10n:Last}}   - localizated text "Last"
+
+    In HP Left:
+      {{nick}}        - player nickname with clan name
+      {{name}}        - player nickname without clan name
+      {{clan}}        - clan name with brackets (empty if no clan)
+      {{clannb}}      - clan name without brackets
+      {{vehicle}}     - vehicle name
+      {{vehiclename}} - internal vehicle name (usa-M24_Chaffee)
+      {{vtype}}       - vehicle type
+      {{level}}       - vehicle level (Arabic numerals)
+      {{rlevel}}      - vehicle level (Roman numerals)
+      {{hp}}          - current health points
+      {{hp-ratio}}    - current health ratio (without '%' sign)
+      {{hp-max}}      - maximum health points
+      {{c:vtype}}     - color depended from vehicle type
+      {{c:hp}}        - color depended from current health points
+      {{c:hp-ratio}}  - color depended from current health ratio
+      {{l10n:hpLeftTitle}}  - localizated text "Hitpoints left:", only in "header"
 
     In Capture bar:
       {{points}}      - points already capture
@@ -156,6 +181,12 @@
       {{time}}        - time left to full capture; minutes and seconds;  can be placed only inside extra section
       {{time-sec}}    - time left to full capture; seconds only;         can be placed only inside extra section
       {{speed}}       - capture speed in points per second;              can be placed only inside extra section
+      {{l10n:enemyBaseCapture}}     - localizated text "Base capture by allies!"
+      {{l10n:enemyBaseCaptured}}    - localizated text "Base captured by allies!"
+      {{l10n:allyBaseCapture}}      - localizated text "Base capture by enemies!"
+      {{l10n:allyBaseCaptured}}     - localizated text "Base captured by enemies!"
+      {{l10n:Timeleft}}             - localizated text "Timeleft"
+      {{l10n:Capturers}}            - localizated text "Capturers"
 
     In Minimap:
       {{level}}        - subject level
@@ -166,13 +197,13 @@
       {{cellsize}}     - minimap cell side size
       {{vehicle-name}} - returns vehicle system name - usa-M24_Chaffee
       {{vehiclename}}  - returns vehicle system name - usa-M24_Chaffee
+      {{vehicle-short}}  - shortened vehicle name
 
     Statistics macros ('rating/showPlayersStatistics' must be anabled):
       {{avglvl}}      - average level (tier) of tanks
       {{eff}}         - player efficiency: http://wot-news.com/index.php/stat/calc/en/
       {{eff:4}}       - player efficiency aligned from left to 4 chars
       {{teff}}, {{e}} - player per-vehicle efficiency: http://www.koreanrandom.com/forum/topic/1643-
-      {{twr}}         - TWR (T-Calc): http://www.koreanrandom.com/forum/topic/2389-
       {{wn}}          - WN6 rating: http://www.koreanrandom.com/forum/topic/2575-
       {{xeff}}        - XVM Scale for efficiency (values 00-99, XX for Tops)
       {{xwn}}         - XVM Scale for WN6 (values 00-99, XX for Tops)
@@ -199,15 +230,29 @@
       {{c:tdb}}, {{c:tdv}}, {{c:tfb}}, {{c:tsb}} - dynamic colors for this macros
       {{c:eff}}       - color depended from player efficiency
       {{c:e}}         - color depended from player per-vehicle efficiency
-      {{c:twr}}       - color depended from TWR (T-Calc)
       {{c:wn}}        - color depended from WN6 rating
       {{c:xeff}}      - color depended from XVM Scale for efficiency
       {{c:xwn}}       - color depended from XVM Scale for WN6
       {{c:rating}}    - color depended from GWR
       {{c:kb}}        - color depended from kilo-battles
+      {{c:avglvl}}    - color depended from average level of tanks
       {{c:t-rating}}  - color depended from current vehicle win ratio
       {{c:t-battles}} - color depended from current vehicle battles
       Any color macro you can change to transparency macro ({{a: tdb}}).
+
+    Localization macros usage - {{l10n:localizationKey}}
+      Macros are just links to translations in file res_mods/xvm/l10n/XX.xc file (XX means language code).
+      If translate is not found, "localizationKey" is displayed.
+
+      Capture bar example
+        /l10n/en.xc
+          "enemyBaseCaptured": "Base captured by allies!"
+        captureBar.xc
+          "captureDoneFormat":    "<font size='17' color='#FFCC66'>{{l10n:enemyBaseCaptured}}</font>"
+
+        formated: "<font size='17' color='#FFCC66'>Base captured by allies!</font>"
+
+      More about localization at wiki: https://code.google.com/p/wot-xvm/wiki/LocalizingXVM
 
   "format" field examples:
     1. Show number of kilo-battles, efficiency and GWR without changing a color:
@@ -225,9 +270,9 @@
 
   Clan and players icons.
   Config parameter battle/clanIconsFolder set path to clan icons root folder.
-  
+
   All icons are loading automatically from game region subfolder (RU/EU/US/...).
-  
+
   To add your clan or player icon, just copy icon file to:
     \res_mods\xvm\res\clanicons\[REGION]\clan\ (for clan)
     \res_mods\xvm\res\clanicons\[REGION]\nick\ (for single player)
@@ -244,7 +289,7 @@
 
   6-th sence image.
   To change sixth sense indicator place alternative PNG image to
-   \res_mods\xvm\res\SixthSense.png. 
+   \res_mods\xvm\res\SixthSense.png.
 
   Hit Log.
   Negative x, y values allow to bind the text to the right and bottom edges for
@@ -252,11 +297,10 @@
   Will work only with running xvm-stat!
 
   Clock in battle and in battle loading screen.
-  Format: Y:year, M:month, D:day, H:hour, N:minute, S:second. "" - remove clock.
+  Formát: PHP Date: http://php.net/date
   For example:
-  "clockFormat": "H:N"          => 01:23
-  "clockFormat": "Y.M.D H:N:S"  => 2013.05.20 01:23:45
-  Also possible to use HTML in clock in battle.
+      "clockFormat": "H:i"          => 01:23
+      "clockFormat": "Y.m.d H:i:s"  => 2013.05.20 01:23:45
 
   Efficiency ranges for {{teff}}, {{e}}.
     TEFF       E
