@@ -3,7 +3,8 @@
  */
 {
   "locale": {
-    "XVM_translator": "Maxim Schedriviy",
+    // Author of translation
+    "XVM_translator": "Maxim Schedriviy/kodos",
 
     // Win chance
     "Chance error": "Ошибка расчета шансов",
@@ -16,13 +17,20 @@
     "fire": "пожар",
     "ramming": "таран",
     "world_collision": "падение",
+    "Hits": "Попадании",
+    "Total": "повреждение",
+    "Last": "Tанк",
+
+    // Hp Left
+    "hpLeftTitle": "Враг в учетном диапазона:",
 
     // Capture
-    "<font size='15' color='#FFFFFF'>Enemy base capture! {{extra}}</font>": "<font size='15' color='#FFFFFF'>Захват вражеской базы! {{extra}}</font>",
-    "<font size='17' color='#FFCC66'>Enemy base captured!</font>": "<font size='17' color='#FFCC66'>Вражеская база захвачена!</font>",
-    "<font size='15' color='#FFFFFF'>Ally base capture! {{extra}}</font>": "<font size='15' color='#FFFFFF'>Захват нашей базы! {{extra}}</font>",
-    "<font size='17' color='#FFCC66'>Ally base captured!</font>": "<font size='17' color='#FFCC66'>Наша база захвачена!</font>",
-    "Capturers: <b><font color='#FFCC66'>{{tanks}}</font></b> Timeleft: <b><font color='#FFCC66'>{{time}}</font><b>": "Захватчиков: <b><font color='#FFCC66'>{{tanks}}</font></b> Осталось: <b><font color='#FFCC66'>{{time}}</font><b>",
+    "enemyBaseCapture": "Захват вражеской базы! Очков захвата",
+    "enemyBaseCaptured": "Победа!",
+    "allyBaseCapture": "Захват нашей базы! Очков захвата",
+    "allyBaseCaptured": "Поражение!",
+    "Timeleft": "Осталось",
+    "Capturers": "Захватчиков",
 
     // FinalStatistics
     "Hit percent": "Процент попаданий",
@@ -38,7 +46,7 @@
     "disabled": "выключено",
 
     // UserInfo
-    "UserInfoEHint": "Эффективность по танку.\nЗначение указано на момент последнего обновления статистики: %DATE%\nАктуальное значение на текущий момент - в детальной информации по технике.\nПравильность значений в колонке зависит от качества полученных исходных данных.",
+    "UserInfoEHint": "Эффективность по танку.\nЗначение указано на момент последнего обновления статистики: \u0025DATE\u0025\nАктуальное значение на текущий момент - в детальной информации по технике.\nПравильность значений в колонке зависит от качества полученных исходных данных.",
     "Data was updated at": "Данные были обновлены",
     " to ": " до ",
     "EFF": "РЭ",
@@ -85,6 +93,9 @@
     "MT": "СТ",
     "LT": "ЛТ",
     "TD": "ПТ",
-    "SPG": "САУ"
+    "SPG": "САУ",
+
+    // VehicleMarkersManager
+    "blownUp": "Взрыв БК!"
   }
 }

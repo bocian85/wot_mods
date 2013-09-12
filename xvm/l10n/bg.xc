@@ -4,7 +4,7 @@
 {
   "locale": {
     // Author of translation
-    "XVM_translator": "kodos",
+    "XVM_translator": "bggeneral",
 
     // Win chance
     "Chance error": "Chance error",
@@ -17,20 +17,20 @@
     "fire": "fire",
     "ramming": "ramming",
     "world_collision": "falling",
-    "Hits": "Hits",
-    "Total": "Damage",
-    "Last": "Tank",
+    "Hits": "Попадения",
+    "Total": "Поражения",
+    "Last": "Танк",
 
     // Hp Left
-    "hpLeftTitle": "enemy in view range",
+    "hpLeftTitle": "Врагове в полезрението",
 
     // Capture
-    "enemyBaseCapture": "Base Capture!  Capture Points",
-    "enemyBaseCaptured": "Victory!",
-    "allyBaseCapture": "Base under Attack!  Capture Points",
-    "allyBaseCaptured": "Defeat!",
+    "enemyBaseCapture": "Точки на завземане ",
+    "enemyBaseCaptured": "Победа!",
+    "allyBaseCapture": "Точки на завземане ",
+    "allyBaseCaptured": "Загуба!",
     "Timeleft": "Timeleft",
-    "Capturers": "Tanks",
+    "Capturers": "Танк",
 
     // FinalStatistics
     "Hit percent": "Hit percent",

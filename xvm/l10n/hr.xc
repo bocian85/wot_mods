@@ -1,5 +1,5 @@
 ﻿/**
- * English translation file.
+ * Croatia translation file.
  */
 {
   "locale": {
@@ -13,24 +13,24 @@
     "per-vehicle": "per-vehicle",
 
     // Hitlog
-    "attack": "attack",
-    "fire": "fire",
-    "ramming": "ramming",
-    "world_collision": "falling",
-    "Hits": "Hits",
-    "Total": "Damage",
-    "Last": "Tank",
+    "attack": "napasti",
+    "fire": "požar",
+    "ramming": "naletjeti",
+    "world_collision": "koji pada",
+    "Hits": "Pogodak",
+    "Total": "Ostecenja",
+    "Last": "Tenk",
 
     // Hp Left
-    "hpLeftTitle": "enemy in view range",
+    "hpLeftTitle": "Neprijatelj na vidiku",
 
     // Capture
-    "enemyBaseCapture": "Base Capture!  Capture Points",
-    "enemyBaseCaptured": "Victory!",
-    "allyBaseCapture": "Base under Attack!  Capture Points",
-    "allyBaseCaptured": "Defeat!",
+    "enemyBaseCapture": "Osvojeni bodovi ",
+    "enemyBaseCaptured": "Pobjeda!",
+    "allyBaseCapture": "Osvojeni bodovi ",
+    "allyBaseCaptured": "Poraz!",
     "Timeleft": "Timeleft",
-    "Capturers": "Tanks",
+    "Capturers": "Tenk",
 
     // FinalStatistics
     "Hit percent": "Hit percent",

@@ -3,7 +3,8 @@
  */
 {
   "locale": {
-    "XVM_translator": "Assassik",
+    // Author of translation
+    "XVM_translator": "Assassik/kodos",
 
     // Win chance
     "Chance error": "Chyba",
@@ -16,13 +17,20 @@
     "fire": "požár",
     "ramming": "náraz",
     "world_collision": "pádem",
+    "Hits": "Zásahy",
+    "Total": "Poškození",
+    "Last": "Tank",
+
+    // Hp Left
+    "hpLeftTitle": "Dohled nepřátel:",
 
     // Capture
-    "<font size='15' color='#FFFFFF'>Enemy base capture! {{extra}}</font>": "<font size='15' color='#FFFFFF'>Obsazování nepřátelské základny! {{extra}}</font>",
-    "<font size='17' color='#FFCC66'>Enemy base captured!</font>": "<font size='17' color='#FFCC66'>Nepřátelská základna obsazena!</font>",
-    "<font size='15' color='#FFFFFF'>Ally base capture! {{extra}}</font>": "<font size='15' color='#FFFFFF'>Obsazování spojenecké základny! {{extra}}</font>",
-    "<font size='17' color='#FFCC66'>Ally base captured!</font>": "<font size='17' color='#FFCC66'>Spojenecká základna obsazena!</font>",
-    "Capturers: <b><font color='#FFCC66'>{{tanks}}</font></b> Timeleft: <b><font color='#FFCC66'>{{time}}</font><b>": "Vozidel: <b><font color='#FFCC66'>{{tanks}}</font></b> Čas: <b><font color='#FFCC66'>{{time}}</font><b>",
+    "enemyBaseCapture": "Obsazování nepřátelské základny! Body obsazení základny",
+    "enemyBaseCaptured": "Vítězství!",
+    "allyBaseCapture": "Obsazování spojenecké základny! Body obsazení základny",
+    "allyBaseCaptured": "Prohra!",
+    "Timeleft": "Čas",
+    "Capturers": "Vozidel",
 
     // FinalStatistics
     "Hit percent": "Zásahů / Výstřelů \u0025",
@@ -38,9 +46,9 @@
     "disabled": "vypnuto",
 
     // UserInfo
-    "UserInfoEHint": "E - Efektivita hráče s vozidlem.\nHodnota je aktuální k datu: %DATE%\nAktuální hodnotu  najdete v podrobných informacích o vozidle.",
+    "UserInfoEHint": "E - Efektivita hráče s vozidlem.\nHodnota je aktuální k datu: \u0025DATE\u0025\nAktuální hodnotu  najdete v podrobných informacích o vozidle.",
     "Data was updated at": "Data byla aktualzována v",
-    " to ": " do ", // 45 wins to 51,5%
+    " to ": " do ", // 45 wins to 51,5
     "EFF": "EFF",
     "updated": "aktualizováno",
     "unknown": "-",
@@ -85,6 +93,9 @@
     "MT": "Střední tank",
     "LT": "Lehký tank",
     "TD": "Stíhač tanků",
-    "SPG": "Dělostřelectvo"
+    "SPG": "Dělostřelectvo",
+
+    // VehicleMarkersManager
+    "blownUp": "Munice!"
   }
 }

@@ -3,7 +3,8 @@
  */
 {
   "locale": {
-    "XVM_translator": "Alexander Shoumsky, <contact@by-reservation.com>",
+    // Author of translation
+    "XVM_translator": "Alexander Shoumsky/kodos",
 
     // Win chance
     "Chance error": "Не ўдалося разлічыць шанцы",
@@ -12,17 +13,24 @@
     "per-vehicle": "паводле тэхнікі",
 
     // Hitlog
-    "attack": "атака",
+    "attack": "стральба",
     "fire": "пажар",
     "ramming": "таран",
     "world_collision": "падзенне",
+    "Hits": "Попадании",
+    "Total": "повреждение",
+    "Last": "Tанк",
+
+    // Hp Left
+    "hpLeftTitle": "Враг в учетном диапазона:",
 
     // Capture
-    "<font size='15' color='#FFFFFF'>Enemy base capture! {{extra}}</font>": "<font size='15' color='#FFFFFF'>Захоп варожай базы! {{extra}}</font>",
-    "<font size='17' color='#FFCC66'>Enemy base captured!</font>": "<font size='17' color='#FFCC66'>Варожая база захоплена!</font>",
-    "<font size='15' color='#FFFFFF'>Ally base capture! {{extra}}</font>": "<font size='15' color='#FFFFFF'>Захоп нашай базы! {{extra}}</font>",
-    "<font size='17' color='#FFCC66'>Ally base captured!</font>": "<font size='17' color='#FFCC66'>Нашую базу захапілі!</font>",
-    "Capturers: <b><font color='#FFCC66'>{{tanks}}</font></b> Timeleft: <b><font color='#FFCC66'>{{time}}</font><b>": "Захопнікаў: <b><font color='#FFCC66'>{{tanks}}</font></b> Засталося: <b><font color='#FFCC66'>{{time}}</font><b>",
+    "enemyBaseCapture": "Захоп варожай базы! Очков захвата",
+    "enemyBaseCaptured": "Победа!",
+    "allyBaseCapture": "Захоп нашай базы! Очков захвата",
+    "allyBaseCaptured": "Поражение!",
+    "Timeleft": "Засталося часу",
+    "Capturers": "Захопнікаў"
 
     // FinalStatistics
     "Hit percent": "Выніковасць стральбы",
@@ -38,7 +46,7 @@
     "disabled": "адкл.",
 
     // UserInfo
-    "UserInfoEHint": "Эфектыўнасць паводле танка.\nЗначэнне паказваецца згодна з апошнім абнаўленнем звестак: %DATE%\nДзейнае значэнне на бягучы час - ў падрабязных звестак паводле тэхнікі.\nСлушнасць значэнняў у слупку залежыць ад колькасці атрыманых зыходных звестак.",
+    "UserInfoEHint": "Эфектыўнасць паводле танка.\nЗначэнне паказваецца згодна з апошнім абнаўленнем звестак: \u0025DATE\u0025\nДзейнае значэнне на бягучы час - ў падрабязных звестак паводле тэхнікі.\nСлушнасць значэнняў у слупку залежыць ад колькасці атрыманых зыходных звестак.",
     "Data was updated at": "Звесткі былі абноўленыя",
     " to ": " да ",
     "EFF": "РЭ",
@@ -85,6 +93,9 @@
     "MT": "СТ",
     "LT": "ЛТ",
     "TD": "СТ-САУ",
-    "SPG": "САУ"
+    "SPG": "САУ",
+
+    // VehicleMarkersManager
+    "blownUp": "Выбух ладунку!"
   }
 }
